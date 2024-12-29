@@ -1,1 +1,15 @@
-
+"rules": [
+{ 
+     "domain": [ "www.perplexity.ai"],
+         },
+    { 
+     "domain_suffix": [
+         "perplexity.ai",
+         "eppo.cloud",
+         "pplx.ai",
+         "singular.net"
+       ]
+      },
+    ],
+          "outbound": "AI"
+          },
