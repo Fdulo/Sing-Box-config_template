@@ -133,7 +133,10 @@
       { "clash_mode": "direct", "outbound": "全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "全球直连" },
-      { "domain": [ "www.perplexity.ai"],
+      { "package_name": [
+        "ai.perplexity.app.android"
+       ],
+        "domain": [ "www.perplexity.ai"],
         "domain_suffix": [
           "perplexity.ai",
           "eppo.cloud",
