@@ -144,8 +144,8 @@
        ],
         "rule_set": "geosite-openai", "outbound": "OpenAI" },
       { "rule_set": "geosite-youtube", "outbound": "YouTube" },
-      { "package_name": [
-        "org.mozilla.firefox"
+      { "domain_suffix": [
+          "firefox.com"
        ],
         "rule_set": ["geoip-google", "geosite-google"], "outbound": "Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "Telegram" },
