@@ -144,7 +144,10 @@
        ],
         "rule_set": "geosite-openai", "outbound": "OpenAI" },
       { "rule_set": "geosite-youtube", "outbound": "YouTube" },
-      { "rule_set": ["geoip-google", "geosite-google"], "outbound": "Google" },
+      { "package_name": [
+        "org.mozilla.firefox"
+       ],
+        "rule_set": ["geoip-google", "geosite-google"], "outbound": "Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "Telegram" },
       { "rule_set": "geosite-tiktok", "outbound": "TikTok" },
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "Netflix" },
