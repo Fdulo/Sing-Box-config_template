@@ -128,10 +128,7 @@
           "ff00::/8"
         ]
       },
-      { "package_name": [
-        "com.olimsoft.android.oplayer.pro"
-       ],
-        "ip_is_private": true, "outbound": "全球直连" },
+      { "ip_is_private": true, "outbound": "全球直连" },
       { "clash_mode": "direct", "outbound": "全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "全球直连" },
