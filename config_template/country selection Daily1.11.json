@@ -27,7 +27,7 @@
       {"tag": "fakeip", "address": "fakeip"}
     ],
     "rules": [
-      {"outbound": "any", "server": "localDns", "disable_cache": true},
+      {"outbound": "any", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
       {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
@@ -35,7 +35,7 @@
       {"type": "logical", "mode": "and", "rules": [
         {"rule_set": "geosite-geolocation-!cn", "invert": true},
         {"rule_set": "geoip-cn"}
-      ], "server": "proxyDns", "client_subnet": "114.114.114.114/24"},
+      ], "server": "proxyDns"},
       {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
     "independent_cache": true,
@@ -80,8 +80,8 @@
     { "tag": "Daily节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Daily Usage|Daily"] }] },
     { "tag": "日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }] },
     { "tag": "美国节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"] }] },
-    { "tag": "Daily节点自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Daily Usage|Daily"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
-    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效|套餐|到期|流量|官网|重置"] }], "url": "http://www.gstatic.com/generate_204", "interval": "30m", "tolerance": 50, "interrupt_exist_connections": true },
+    { "tag": "Daily节点自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["Daily Usage|Daily"] }], "url": "http://www.gstatic.com/generate_204", "interval": "15m", "tolerance": 50 },
+    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效|套餐|到期|流量|官网|重置"] }], "url": "http://www.gstatic.com/generate_204", "interval": "30m", "tolerance": 50 },
     { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择", "全球直连", "手动切换"] },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["自动选择", "全球直连", "手动切换"] },
     { "tag": "全球直连", "type": "direct" }
@@ -109,7 +109,6 @@
           "action": "hijack-dns"
       },
       {
-        "disable_cache": true,
         "domain_suffix": [
           "appcenter.ms",
           "firebase.io",
