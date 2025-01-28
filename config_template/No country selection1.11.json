@@ -1,7 +1,7 @@
 {
   "log": {
     "disabled": false,
-    "level": "info",
+    "level": "debug",
     "timestamp": true
   },
   "experimental": {
@@ -27,7 +27,7 @@
       {"tag": "fakeip", "address": "fakeip"}
     ],
     "rules": [
-      {"outbound": "any", "server": "localDns", "disable_cache": true},
+      {"outbound": "any", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
       {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
@@ -106,7 +106,6 @@
           "action": "hijack-dns"
       },
       {
-        "disable_cache": true,
         "domain_suffix": [
           "appcenter.ms",
           "firebase.io",
