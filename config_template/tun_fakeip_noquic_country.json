@@ -164,7 +164,7 @@
             ],
             "default": "proxy"
         },
-       {
+        {
             "tag": "YouTube",
             "type": "selector",
             "outbounds": [
@@ -178,6 +178,19 @@
                 "Others"
             ],
             "default": "proxy"
+        },
+        {
+        "tag":"Spotify",
+        "type":"selector",
+        "outbounds":[
+          "HongKong",
+          "TaiWan",
+          "Singapore",
+          "Japan",
+          "America",
+          "Others"
+        ],
+        "default": "America"
         },
         {
             "tag": "telegram",
