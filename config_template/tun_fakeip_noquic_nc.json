@@ -156,6 +156,15 @@
             "default": "proxy"
         },
         {
+             "tag":"Spotify",
+             "type":"selector",
+              "outbounds":[
+                "proxy",
+               "direct-out"
+            ],
+             "default": "proxy"
+        },
+        {
             "tag": "telegram",
             "type": "selector",
             "outbounds": [
