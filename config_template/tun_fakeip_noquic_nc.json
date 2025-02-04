@@ -133,6 +133,16 @@
             "default": "proxy"
         },
         {
+            "tag": "YouTube",
+            "type": "selector",
+            "outbounds": [
+            "proxy",
+                "proxy",
+                "direct-out"
+            ],
+            "default": "proxy"
+        },
+        {
             "tag": "Google",
             "type": "selector",
             "outbounds": [
