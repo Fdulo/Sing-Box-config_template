@@ -211,11 +211,6 @@
                 "action": "hijack-dns"
             },
             {
-                "network": "udp",
-                "port": 443,
-                "action": "reject"
-            },
-            {
                 "clash_mode": "direct",
                 "action": "route",
                 "outbound": "direct-out"
@@ -243,18 +238,22 @@
             },
             {
                 "action": "route",
-                "domain": [ "www.perplexity.ai"],
-        "domain_suffix": [
-          "perplexity.ai",
-          "eppo.cloud",
-          "pplx.ai",
-          "singular.net"
-       ],
-          "package_name": [
-        "ai.perplexity.app.android"
-       ],
                 "rule_set": [
                     "ai_non_ip"
+                ],
+                "outbound": "openai"
+            },
+            {
+                "action": "route",
+                "package_name": [
+                   "ai.perplexity.app.android"
+                ],
+                "domain": [ "www.perplexity.ai"],
+                "domain_suffix": [
+                   "perplexity.ai",
+                   "eppo.cloud",
+                   "pplx.ai",
+                   "singular.net"
                 ],
                 "outbound": "openai"
             },
@@ -286,6 +285,20 @@
                     "microsoft_non_ip"
                 ],
                 "outbound": "microsoft"
+            },
+            {
+                "action": "route",
+                "rule_set": [
+                    "geosite-youtube"
+                ],
+                "outbound": "YouTube"
+            },
+            {
+                "action": "route",
+                "package_name": [
+                    "app.rvx.android.youtube"
+               ],
+                "outbound": "YouTube"
             },
             { 
                 "action": "route",
@@ -440,7 +453,14 @@
                 "url": "https://gh-proxy.com/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/microsoft.srs",
                 "download_detour": "direct-out"
             },
-           { 
+            {
+                "tag": "geosite-youtube",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+                "download_detour": "direct-out"
+            },
+            { 
                 "tag": "geoip-google", 
                 "type": "remote", 
                 "format": "binary", 
@@ -455,11 +475,11 @@
                 "download_detour": "direct-out" 
             },
            {
-          "tag": "geosite-spotify",
-          "type": "remote",
-          "format": "binary",
-          "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
-          "download_detour": "direct-out"
+                "tag": "geosite-spotify",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
+                "download_detour": "direct-out"
             },
             {
                 "tag": "download_domainset",
