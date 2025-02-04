@@ -128,12 +128,6 @@
             ],
            "default": "general-detour"
         },
-        {
-            "tag": "general-detour",
-            "type": "selector",
-            "outbounds": [ "{all}" ],
-            "interrupt_exist_connections": true
-        },
        {
             "tag": "openai",
             "type": "selector",
@@ -151,21 +145,6 @@
         },
         {
             "tag": "Google",
-            "type": "selector",
-            "outbounds": [
-                "proxy",
-                "direct-out",
-                "HongKong",
-                "TaiWan",
-                "Singapore",
-                "Japan",
-                "America",
-                "Others"
-            ],
-            "default": "proxy"
-        },
-        {
-            "tag": "YouTube",
             "type": "selector",
             "outbounds": [
                 "proxy",
@@ -223,6 +202,12 @@
             "default": "proxy"
         },
         {
+            "tag": "general-detour",
+            "type": "selector",
+            "outbounds": [ "{all}" ],
+            "interrupt_exist_connections": true
+        },
+        {
             "tag": "final",
             "type": "selector",
             "outbounds": [
@@ -237,7 +222,6 @@
             ],
             "default": "proxy"
         },
-       
         {
         "tag":"HongKong",
         "type":"selector",
@@ -397,13 +381,6 @@
                  "rule_set": ["geoip-google", "geosite-google"], 
                  "outbound": "Google" 
             },
-            { 
-                 "action": "route",
-                 "package_name": [
-        "app.rvx.android.youtube"
-       ],
-                  "rule_set": "geosite-youtube", "outbound": "YouTube" 
-            },
             {
                 "action": "route",
                 "rule_set": [
@@ -552,13 +529,6 @@
                 "url": "https://gh-proxy.com/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/microsoft.srs",
                 "download_detour": "direct-out"
             },
-           {
-                "tag": "geosite-youtube", 
-                "type": "remote", 
-                "format": "binary", 
-                "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", 
-                 "download_detour": "direct-out" 
-           },
            { 
                 "tag": "geoip-google", 
                 "type": "remote", 
