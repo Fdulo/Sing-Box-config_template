@@ -5,13 +5,6 @@
         "output": "/storage/emulated/0/Download/box.log",
         "timestamp": true
     },
-    "ntp": {
-        "enabled": true,
-        "server": "ntp.aliyun.com",
-        "server_port": 123,
-        "interval": "30m",
-        "detour": "direct-out"
-    },
     "experimental": {
         "cache_file": {
             "enabled": true,
@@ -57,10 +50,6 @@
                 "action": "route",
                 "clash_mode": "direct",
                 "server": "dns_direct"
-            },
-            {
-                "action": "reject",
-                "query_type": "HTTPS"
             },
             {
                 "action": "route",
