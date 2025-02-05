@@ -90,7 +90,7 @@
       ],
       "stack": "mixed",
       "auto_route": true,
-      "strict_route": true,
+      "strict_route": false,
       "platform": {
         "http_proxy": {
           "enabled": true,
