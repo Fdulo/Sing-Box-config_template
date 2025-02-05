@@ -240,12 +240,7 @@
             "outbounds": [
                 "proxy",
                 "direct-out",
-                "HongKong",
-                "TaiWan",
-                "Singapore",
-                "Japan",
-                "America",
-                "Others"
+                "{all}"
             ],
             "default": "proxy"
         },
