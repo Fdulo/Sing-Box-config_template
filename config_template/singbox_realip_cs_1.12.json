@@ -181,7 +181,7 @@
           "America",
           "Others"
         ],
-        "default": "America"
+        "default": "proxy"
         },
         {
             "tag": "telegram",
