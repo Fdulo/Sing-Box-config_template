@@ -125,6 +125,7 @@
       "outbounds": [
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
       ],
       "default": "proxy"
@@ -135,6 +136,7 @@
       "outbounds": [
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
       ],
       "default": "proxy"
@@ -145,6 +147,7 @@
       "outbounds": [
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
       ],
       "default": "proxy"
@@ -155,6 +158,7 @@
        "outbounds":[
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
        ],
        "default": "proxy"
@@ -165,6 +169,7 @@
       "outbounds": [
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
       ],
       "default": "proxy"
@@ -175,12 +180,21 @@
       "outbounds": [
         "proxy",
         "direct-out",
+        "alternative-route",
         "final"
       ],
       "default": "proxy"
     },
     {
       "tag": "general-detour",
+      "type": "selector",
+      "outbounds": [
+            "{all}"
+      ],
+    "interrupt_exist_connections": true
+    },
+    {
+      "tag": "alternative-route",
       "type": "selector",
       "outbounds": [
             "{all}"
