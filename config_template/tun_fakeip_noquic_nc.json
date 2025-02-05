@@ -4,6 +4,13 @@
         "level": "warn",
         "timestamp": true
     },
+    "ntp": {
+        "enabled": true,
+        "server": "ntp.aliyun.com",
+        "server_port": 123,
+        "interval": "30m",
+        "detour": "direct-out"
+    },
     "experimental": {
         "cache_file": {
             "enabled": true,
@@ -51,6 +58,10 @@
                 "server": "dns_direct"
             },
             {
+                "action": "reject",
+                "query_type": "HTTPS"
+            },
+            {
                 "action": "route",
                 "clash_mode": "global",
                 "server": "fakeip"
@@ -93,8 +104,21 @@
             ],
             "stack": "mixed",
             "auto_route": true,
-            "strict_route": true
-        }
+            "strict_route": true,
+            "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+         }
+       }
+     },
+     {
+       "tag": "mixed-in",
+       "type": "mixed",
+       "listen": "127.0.0.1",
+       "listen_port": 7890
+     }
     ],
     "outbounds": [
         {
@@ -197,6 +221,11 @@
                     }
                 ],
                 "action": "hijack-dns"
+            },
+            {
+                "network": "udp",
+                "port": 443,
+                "action": "reject"
             },
             {
                 "clash_mode": "direct",
