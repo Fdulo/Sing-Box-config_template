@@ -13,7 +13,7 @@
     },
   "experimental": {
     "cache_file": {
-      "enabled": false,
+      "enabled": true,
       "store_fakeip": true,
       "store_rdrc": false
     },
