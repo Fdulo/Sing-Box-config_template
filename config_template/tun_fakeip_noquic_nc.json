@@ -134,69 +134,89 @@
             ],
            "default": "general-detour"
         },
-        
         {
-            "tag": "openai",
-            "type": "selector",
-            "outbounds": [
-                "proxy",
-                "direct-out"
-            ],
-            "default": "proxy"
-        },
-        {
-            "tag": "YouTube",
-            "type": "selector",
-            "outbounds": [
-            "proxy",
-                "proxy",
-                "direct-out"
-            ],
-            "default": "proxy"
-        },
-        {
-            "tag": "Google",
-            "type": "selector",
-            "outbounds": [
-                "proxy",
-                "direct-out"
-            ],
-            "default": "proxy"
-        },
-        {
-             "tag":"Spotify",
-             "type":"selector",
-              "outbounds":[
-                "proxy",
-               "direct-out"
-            ],
-             "default": "proxy"
-        },
-        {
-            "tag": "telegram",
-            "type": "selector",
-            "outbounds": [
-                "proxy",
-                "direct-out"
-            ],
-            "default": "proxy"
-        },
-        {
-            "tag": "microsoft",
-            "type": "selector",
-            "outbounds": [
-                "proxy",
-                "direct-out"
-            ],
-            "default": "proxy"
-        },
-        {
-            "tag": "general-detour",
-            "type": "selector",
-            "outbounds": [ "{all}" ],
-            "interrupt_exist_connections": true
-        },
-        {
+      "tag": "openai",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+      ],
+      "default": "proxy"
+    },
+    {
+      "tag": "YouTube",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+      ],
+      "default": "proxy"
+    },
+    {
+      "tag": "Google",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+      ],
+      "default": "proxy"
+    },
+    {
+       "tag":"Spotify",
+       "type":"selector",
+       "outbounds":[
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+       ],
+       "default": "proxy"
+    },
+    {
+      "tag": "telegram",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+      ],
+      "default": "proxy"
+    },
+    {
+      "tag": "microsoft",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct-out",
+        "alternative-route",
+        "final"
+      ],
+      "default": "proxy"
+    },
+    {
+      "tag": "general-detour",
+      "type": "selector",
+      "outbounds": [
+            "{all}"
+      ],
+    "interrupt_exist_connections": true
+    },
+    {
+      "tag": "alternative-route",
+      "type": "selector",
+      "outbounds": [
+            "{all}"
+      ],
+    "interrupt_exist_connections": true
+    },
+    {
             "tag": "final",
             "type": "selector",
             "outbounds": [
@@ -204,7 +224,7 @@
                 "direct-out"
             ],
             "default": "proxy"
-        }
+      }
     ],
     "route": {
         "rules": [
