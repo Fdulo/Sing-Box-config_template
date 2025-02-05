@@ -31,7 +31,7 @@
       {
         "tag": "dns_proxy",
         "type": "https",             
-        "server": "1.1.1.1",
+        "server": "1.0.0.1",
         "detour": "proxy"
       },
       {
