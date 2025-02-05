@@ -29,7 +29,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://1.1.1.1/dns-query",
+        "address": "https://1.0.0.1/dns-query",
         "detour": "proxy"
       },
       {
