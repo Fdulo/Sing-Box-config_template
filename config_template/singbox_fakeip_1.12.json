@@ -615,17 +615,3 @@
     "final": "final"
   }
 }
-nload_detour": "direct-out"
-      },
-      {
-        "tag": "geosite-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
-        "download_detour": "direct-out"
-      }
-    ],
-    "auto_detect_interface": true,
-    "final": "final"
-  }
-}
