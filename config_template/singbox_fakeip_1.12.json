@@ -47,13 +47,24 @@
     ],
     "rules": [
             {
+               "rule_set": "geosite-cn",
+               "server": "dns_direct"
+            },
+            {
                 "action": "route",
                 "query_type": [
                     "A",
                   "AAAA"
                 ],
                 "server": "fakeip",
-                "rewrite_ttl": 100
+                "rewrite_ttl": 300
+            },
+            {
+                 "query_type": [
+                    "A",
+                   "AAAA"
+                ],
+                "server": "fakeip"
             },
             {
                 "type": "logical",
