@@ -1,22 +1,15 @@
 {
   "log": {
     "disabled": false,
-    "level": "debug",
-    "output": "/storage/emulated/0/Download/box.log"
+    "level": "warn",
+    "output": "box.log"
     "timestamp": true
   },
-"ntp": {
-        "enabled": true,
-        "server": "ntp.aliyun.com",
-        "server_port": 123,
-        "interval": "30m",
-        "detour": "direct-out"
-    },
   "experimental": {
     "cache_file": {
       "enabled": true,
       "store_fakeip": true,
-      "store_rdrc": true
+      "store_rdrc": false
     },
     "clash_api": {
       "external_controller": "127.0.0.1:9095",
@@ -49,19 +42,17 @@
      {
         "tag": "fakeip",
         "type": "fakeip",          
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"  
+        "inet4_range": "198.18.0.0/15"
       }
     ],
     "rules": [
             {
                 "action": "route",
                 "query_type": [
-                    "A",
-                    "AAAA"
+                    "A"
                 ],
                 "server": "fakeip",
-                "rewrite_ttl": 300
+                "rewrite_ttl": 100
             },
             {
                 "type": "logical",
@@ -86,8 +77,7 @@
       "type": "tun",
       "interface_name": "singbox",
       "address": [
-        "172.19.0.1/30",
-        "fdfe:2952:8964::1/126"
+        "172.19.0.1/30"
       ],
       "stack": "mixed",
       "auto_route": true,
@@ -200,9 +190,10 @@
 ],
   "route": {
 "default_domain_resolver": {
+        "server": "dns_direct",
+        "strategy": "ipv4_only",
         "server": "dns_direct"
       },
-    "rules": [
       {
         "type": "logical",
         "mode": "or",
