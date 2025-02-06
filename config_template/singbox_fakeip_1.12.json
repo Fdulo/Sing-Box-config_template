@@ -41,11 +41,6 @@
         "detour": "direct-out"
       },
       {
-        "tag": "local",
-        "type": "local",             
-        "detour": "direct-out"
-      },
-     {
         "tag": "fakeip",
         "type": "fakeip",          
         "inet4_range": "198.18.0.0/15",
@@ -230,7 +225,7 @@
 ],
   "route": {
 "default_domain_resolver": {
-        "server": "local"
+        "server": "fakeip"
       },
     "rules": [
       {
