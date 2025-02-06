@@ -30,7 +30,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "type": "h3",             
+        "type": "https",             
         "server": "8.8.8.8",
         "detour": "proxy"
       },
