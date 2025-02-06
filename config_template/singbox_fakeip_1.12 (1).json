@@ -555,6 +555,6 @@
       }
     ],
     "auto_detect_interface": true,
-    "final": "final"
+    "final": "proxy"
   }
 }
