@@ -5,12 +5,6 @@
     "output": "box.log"
     "timestamp": true
   },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": false
-    },
     "clash_api": {
       "external_controller": "127.0.0.1:9095",
       "external_ui": "ui",
