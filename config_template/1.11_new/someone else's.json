@@ -56,7 +56,7 @@
             "address": [
                 "172.19.0.1/28"
             ],
-            "mtu": 9000,
+            "mtu": 1440,
             "auto_route": true,
             "endpoint_independent_nat": false,
             "strict_route": true,
@@ -85,11 +85,6 @@
     { "tag": "Telegram", "type": "selector", "outbounds": ["节点选择", "自动选择", "香港节点", "台湾节点","日本节点", "狮城节点", "美国节点", "手动切换"],"default":"自动选择"},
     { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择", "手动切换", "全球直连"],"default":"节点选择"  },
     { "tag": "手动切换", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }] },
-    { "tag": "台湾节点", "type":"selector", "outbounds": ["{all}"], "filter": [{"action":"include", "keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}]},
-    { "tag": "日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }] },
-    { "tag": "狮城节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新加坡|坡|狮城|SG|Singapore"] }] },
-    { "tag": "美国节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"] }, { "action": "exclude", "keywords": ["香港|港|HK|hk|HongKong"] }] },
     { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.youtube.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "全球直连", "type": "direct" }
   ],
