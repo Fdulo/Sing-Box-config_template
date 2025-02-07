@@ -34,7 +34,7 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://8.8.8.8/dns-query",
+                "address": "tls://8.8.8.8",
                 "address_resolver": "dns_direct",
                 "address_strategy": "ipv4_only",
                 "detour": "proxy"
