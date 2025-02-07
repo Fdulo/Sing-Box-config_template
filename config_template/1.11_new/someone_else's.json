@@ -142,7 +142,7 @@
       { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "全球直连","update_interval": "3d" },     
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "全球直连","update_interval": "3d" },
-      { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "全球直连,"update_interval": "3d" }
+      { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "全球直连","update_interval": "3d" }
     ]
   }
 }
