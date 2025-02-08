@@ -59,16 +59,7 @@
             "mtu": 1450,
             "auto_route": true,
             "endpoint_independent_nat": false,
-            "strict_route": true,
-       "platform": {
-        "http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 7890}
-      }
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
+            "strict_route": true
     }
     ],
   "outbounds": [   
