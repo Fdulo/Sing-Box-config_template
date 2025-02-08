@@ -38,7 +38,7 @@
                 ],
                 "action": "route",
                 "server": "dns-remote",
-                "client_subnet": "1.2.4.8/24"
+                "client_subnet": "61.141.249.0/24"
             }
         ],
         "final": "dns-remote",
@@ -56,7 +56,7 @@
             "address": [
                 "172.19.0.1/28"
             ],
-            "mtu": 1440,
+            "mtu": 1450,
             "auto_route": true,
             "endpoint_independent_nat": false,
             "strict_route": true,
