@@ -66,10 +66,6 @@
                 "server": "fakeip"
             },
             {
-               "rule_set": "geosite-cn",
-               "server": "dns_direct"
-            },
-            {
                 "action": "route",
                 "query_type": [
                     "A",
@@ -77,13 +73,6 @@
                 ],
                 "server": "fakeip",
                 "rewrite_ttl": 1
-            },
-            {
-                 "query_type": [
-                    "A",
-                   "AAAA"
-                ],
-                "server": "fakeip"
             },
             {
                 "type": "logical",
