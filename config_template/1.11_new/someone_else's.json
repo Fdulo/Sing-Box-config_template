@@ -76,7 +76,7 @@
     }
     ],
   "outbounds": [   
-    { "tag": "节点选择", "type": "selector", "outbounds": ["自动选择", "手动切换", "全球直连"] },
+    { "tag": "节点选择", "type": "selector", "outbounds": ["手动切换", "自动选择", "全球直连"] },
     { "tag": "YouTube", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
     { "tag": "OpenAI", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
     { "tag": "Google", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
