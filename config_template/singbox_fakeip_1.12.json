@@ -368,11 +368,6 @@
         "outbound": "direct-out"
       },
       {
-        "action": "route",
-        "rule_set": "geosite-cn",
-        "outbound": "direct-out"
-      },
-      {
         "rule_set": [
           "reject_ip"
         ],
