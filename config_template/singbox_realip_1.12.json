@@ -238,14 +238,17 @@
         "action": "hijack-dns"
       },
       {
-         "network": "udp",
-         "port": 443,
-         "action": "reject"
-      },
-      {
         "clash_mode": "direct",
         "action": "route",
         "outbound": "direct-out"
+      },
+      {
+                "type": "logical",
+                "mode": "or",
+                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
+                "action": "reject",
+                "method": "default",
+                "no_drop": false
       },
       {
         "clash_mode": "global",
