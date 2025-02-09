@@ -5,21 +5,21 @@
     "output": "box.log"
     "timestamp": true
   },
-  "experimental": {
-   "clash_api": {
-      "external_controller": "127.0.0.1:9095",
-      "external_ui": "ui",
-      "secret": "zxcv...Q",
-      "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "dns_direct",
-      "default_mode": "rule"
-      },
+   "experimental": {
     "cache_file": {
       "enabled": true,
       "store_fakeip": true,
       "store_rdrc": false
-       }
-      },
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9095",
+      "external_ui": "ui",
+      "secret": "zxcv...Q",
+      "external_ui_download_url": "https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "direct-out",
+      "default_mode": "rule"
+      }
+  },
   "dns": {
     "servers": [
       {
