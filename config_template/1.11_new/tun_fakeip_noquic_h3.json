@@ -59,6 +59,10 @@
                 "server": "dns_direct"
             },
             {
+                "action": "reject",
+                "query_type": "HTTPS"
+            },
+            {
                 "action": "route",
                 "clash_mode": "global",
                 "server": "fakeip"
@@ -243,7 +247,7 @@
             {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port":853},{"protocol":"stun"}],
+                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
