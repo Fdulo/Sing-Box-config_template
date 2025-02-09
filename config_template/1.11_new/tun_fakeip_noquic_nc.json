@@ -72,7 +72,7 @@
                   "AAAA"
                 ],
                 "server": "fakeip",
-                "rewrite_ttl": 1
+                "disable_cache": true
             },
             {
                 "type": "logical",
