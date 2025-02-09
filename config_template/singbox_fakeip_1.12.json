@@ -71,13 +71,6 @@
                 "rewrite_ttl": 1
             },
             {
-                 "query_type": [
-                    "A",
-                   "AAAA"
-                ],
-                "server": "fakeip"
-            },
-            {
                 "type": "logical",
                 "mode": "and",
                 "rules": [
