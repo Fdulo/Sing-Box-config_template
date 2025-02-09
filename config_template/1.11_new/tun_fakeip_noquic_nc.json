@@ -35,7 +35,13 @@
             {
                 "tag": "dns_direct",
                 "address": "223.5.5.5",
+                "address_resolver": "dns_local",
                 "address_strategy": "ipv4_only",
+                "detour": "direct-out"
+            },
+            {
+                "tag": "dns_local",
+                "address": "local",
                 "detour": "direct-out"
             },
             {
