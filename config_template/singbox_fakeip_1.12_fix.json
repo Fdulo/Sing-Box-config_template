@@ -99,7 +99,11 @@
         "rewrite_ttl": 1
       }
     ],
-    "final": "dns_proxy"
+        "final": "dns_proxy",
+        "disable_cache": false,
+        "disable_expire": true,
+        "independent_cache": true,
+        "reverse_mapping": false
   },
   "inbounds": [
     {
