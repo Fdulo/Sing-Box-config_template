@@ -225,7 +225,7 @@
         "action": "hijack-dns"
       },
       {
-        "clash_mode": "direct",
+        "clash_mode": "Direct",
         "action": "route",
         "outbound": "direct-out"
       },
@@ -238,7 +238,7 @@
                 "no_drop": false
       },
       {
-        "clash_mode": "global",
+        "clash_mode": "Global",
         "action": "route",
         "outbound": "proxy"
       },
