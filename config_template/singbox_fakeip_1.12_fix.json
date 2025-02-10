@@ -55,12 +55,12 @@
     "rules": [
       {
         "action": "route",
-        "clash_mode": "direct",
+        "clash_mode": "Direct",
         "server": "dns_direct"
       },
       {
         "action": "route",
-        "clash_mode": "global",
+        "clash_mode": "Global",
         "server": "fakeip"
       },
       {
@@ -242,7 +242,7 @@
         "action": "hijack-dns"
       },
       {
-        "clash_mode": "direct",
+        "clash_mode": "Direct",
         "action": "route",
         "outbound": "direct-out"
       },
@@ -255,7 +255,7 @@
                 "no_drop": false
       },
       {
-        "clash_mode": "global",
+        "clash_mode": "Global",
         "action": "route",
         "outbound": "proxy"
       },
