@@ -47,43 +47,27 @@
       }
     ],
     "rules": [
-      {
-        "action": "route",
-        "clash_mode": "direct",
-        "server": "dns_direct"
-      },
-      {
-         "action": "reject",
-         "query_type": "HTTPS"
-      },
-      {
-        "action": "route",
-        "clash_mode": "global",
-        "server": "dns_proxy"
-      },
-      {
-        "action": "route",
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
+      {"clash_mode":"Direct","action":"route","server":"dns-local"},
+            {"clash_mode":"Global","action":"route","server":"dns-remote"},
+            {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
+            {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
+            {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                   {"rule_set":"geosite-geolocation-!cn","invert":true},{"rule_set":"geoip-cn"}
+                ],
+                "action": "route",
+                "server": "dns-remote",
+                "client_subnet": "61.141.249.0/24"
+            }
         ],
-        "server": "dns_proxy",
-        "client_subnet": "61.141.249.0/24"
-      }
-    ],
-    "final": "dns_proxy"
-  },
+        "final": "dns-remote",
+        "disable_cache": false,
+        "disable_expire": true,
+        "independent_cache": true,
+        "reverse_mapping": false
+    },
   "inbounds": [
     {
       "tag": "tun-in",
