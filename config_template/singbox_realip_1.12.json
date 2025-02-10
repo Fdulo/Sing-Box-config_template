@@ -63,7 +63,7 @@
         ],
         "final": "ddns_proxy",
         "disable_cache": false,
-        "disable_expire": true,
+        "disable_expire": false,
         "independent_cache": true,
         "reverse_mapping": false
     },
