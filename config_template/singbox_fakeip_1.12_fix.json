@@ -54,16 +54,6 @@
     ],
     "rules": [
       {
-                "action": "route",
-                "clash_mode": "direct",
-                "server": "dns_direct"
-      },
-      {
-                "action": "route",
-                "clash_mode": "global",
-                "server": "fakeip"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
@@ -237,24 +227,6 @@
           }
         ],
         "action": "hijack-dns"
-      },
-      {
-                "clash_mode": "direct",
-                "action": "route",
-                "outbound": "direct-out"
-      },
-      }
-                "type": "logical",
-                "mode": "or",
-                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
-                "action": "reject",
-                "method": "default",
-                "no_drop": false
-      },
-      {
-                "clash_mode": "global",
-                "action": "route",
-                "outbound": "proxy"
       },
       {
         "rule_set": [
