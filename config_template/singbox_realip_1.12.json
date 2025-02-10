@@ -61,7 +61,7 @@
                 "client_subnet": "61.141.249.0/24"
             }
         ],
-        "final": "ddns_proxy",
+        "final": "dns_proxy",
         "disable_cache": false,
         "disable_expire": true,
         "independent_cache": true,
