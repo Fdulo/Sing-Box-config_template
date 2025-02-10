@@ -239,7 +239,6 @@
         "action": "route",
         "outbound": "direct-out"
       },
-      { "ip_is_private": true, "outbound": "direct-out" },
       {
                 "type": "logical",
                 "mode": "or",
@@ -248,6 +247,7 @@
                 "method": "default",
                 "no_drop": false
       },
+      { "ip_is_private": true, "outbound": "direct-out" },
       {
         "clash_mode": "Global",
         "action": "route",
