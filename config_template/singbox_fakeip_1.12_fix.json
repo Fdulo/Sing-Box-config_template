@@ -101,7 +101,7 @@
     ],
         "final": "dns_proxy",
         "disable_cache": false,
-        "disable_expire": false,
+        "disable_expire": true,
         "independent_cache": true,
         "reverse_mapping": false
   },
