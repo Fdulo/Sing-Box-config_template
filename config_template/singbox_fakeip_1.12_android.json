@@ -83,14 +83,6 @@
         ],
         "server": "dns_proxy"
       },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip",
-        "rewrite_ttl": 1
-      }
     ],
         "final": "dns_proxy",
         "disable_cache": false,
