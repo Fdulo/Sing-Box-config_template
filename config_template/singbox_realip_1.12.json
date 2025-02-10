@@ -14,7 +14,6 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "store_fakeip": true,
       "store_rdrc": false
     },
     "clash_api": {
@@ -207,20 +206,8 @@
         "server": "local"
       },
     "rules": [
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "protocol": "dns"
-          },
-          {
-            "network": "udp",
-            "port": 53
-          }
-        ],
-        "action": "hijack-dns"
-      },
+      {"action":"sniff"},
+      {"protocol":"dns","action":"hijack-dns"},
       {
         "clash_mode": "direct",
         "action": "route",
