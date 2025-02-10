@@ -206,8 +206,20 @@
         "server": "local"
       },
     "rules": [
-      {"action":"sniff"},
-      {"protocol":"dns","action":"hijack-dns"},
+            {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "network": "udp",
+            "port": 53
+          }
+        ],
+        "action": "hijack-dns"
+      },
       {
         "clash_mode": "direct",
         "action": "route",
