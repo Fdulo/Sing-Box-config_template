@@ -239,6 +239,7 @@
         "action": "route",
         "outbound": "direct-out"
       },
+      { "ip_is_private": true, "outbound": "direct-out" },
       {
                 "type": "logical",
                 "mode": "or",
