@@ -49,17 +49,21 @@
       {"clash_mode":"Direct","action":"route","server":"dns_direct"},
             {"clash_mode":"Global","action":"route","server":"dns_proxy"},
             {"rule_set":"geosite-cn","action":"route","server":"dns_direct"},
-            {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns_proxy"},
+            {"rule_set":"geolocation-!cn","action":"route","server":"dns_proxy"},
             {
-                "type": "logical",
-                "mode": "and",
-                "rules": [
-                   {"rule_set":"geosite-geolocation-!cn","invert":true},{"rule_set":"geoip-cn"}
-                ],
-                "action": "route",
-                "server": "dns_proxy",
-                "client_subnet": "61.141.249.0/24"
-            }
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "dns_proxy"
+        }
         ],
         "final": "dns_proxy",
         "disable_cache": false,
