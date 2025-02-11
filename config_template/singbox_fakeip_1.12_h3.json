@@ -23,14 +23,14 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "type": "h3",             
+        "type": "udp",             
         "server": "8.8.8.8",
         "domain_resolver": "dns_direct",
         "detour": "proxy"
       },
       {
         "tag": "dns_direct",
-        "type": "https",             
+        "type": "udp",             
         "server": "223.5.5.5",
         "domain_resolver": "local"
       },
