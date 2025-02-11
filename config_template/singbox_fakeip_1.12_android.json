@@ -72,8 +72,8 @@
         "server": "dns_direct"
       },
       {
-            "rule_set": "geoip-cn",
-            "server": "dns_proxy"
+         "rule_set": "geoip-cn",
+         "server": "dns_direct"
       },
       {
         "query_type": [
