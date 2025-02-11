@@ -61,7 +61,7 @@
           "AAAA"
         ],
         "rule_set": "geosite-cn",
-        "server": "fakeip"
+        "server": "dns_direct"
       },
       {
         "query_type": [
@@ -89,14 +89,12 @@
           "A",
           "AAAA"
         ],
-        "rule_set": "geolocation-!cn",
         "server": "fakeip"
       },
       {
         "query_type": [
           "CNAME"
         ],
-        "rule_set": "geolocation-!cn",
         "server": "dns_proxy"
       }
     ],
