@@ -61,15 +61,6 @@
         "server": "dns_direct"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": "geosite-cn",
-        "server": "fakeip",
-        "rewrite_ttl": 1
-      },
-      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -81,7 +72,18 @@
             "rule_set": "geoip-cn"
           }
         ],
-        "server": "dns_proxy"
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "server": "fakeip"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
         "final": "dns_proxy",
