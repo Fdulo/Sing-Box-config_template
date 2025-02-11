@@ -25,18 +25,19 @@
         "tag": "dns_proxy",
         "type": "https",             
         "server": "8.8.8.8",
+        "domain_resolver": "dns_direct",
         "detour": "proxy"
       },
       {
         "tag": "dns_direct",
         "type": "https",             
-        "server": "223.5.5.5",
-        "detour": "direct-out"
+        "server": "223.5.5.5"
+        "domain_resolver": "local"
+        
       },
       {
         "tag": "local",
-        "type": "local",             
-        "detour": "direct-out"
+        "type": "local"
       },
      {
         "tag": "fakeip",
@@ -74,7 +75,11 @@
         ],
         "server": "dns_direct"
       },
-      {
+      { 
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
         "rule_set": "geolocation-!cn",
         "server": "fakeip"
       },
@@ -214,6 +219,9 @@
         "server": "dns_direct"
       },
     "rules": [
+            {
+        "action": "sniff"
+            },
             {
         "type": "logical",
         "mode": "or",
