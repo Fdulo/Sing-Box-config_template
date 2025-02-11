@@ -25,7 +25,8 @@
         "tag": "dns_proxy",
         "type": "https",             
         "server": "8.8.8.8",
-        "domain_resolver": "dns_direct"
+        "domain_resolver": "dns_direct",
+        "detour": "proxy"
       },
       {
         "tag": "dns_direct",
