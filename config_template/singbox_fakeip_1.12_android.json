@@ -76,6 +76,11 @@
          "server": "dns_direct"
       },
       {
+            "rule_set": "geolocation-!cn",
+            "invert": true,
+        "server": "dns_proxy"
+      },
+      {
         "query_type": [
           "A",
           "AAAA"
