@@ -72,18 +72,8 @@
         "server": "dns_direct"
       },
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
-        ],
-        "server": "dns_proxy"
+            "rule_set": "geoip-cn",
+            "server": "dns_proxy"
       },
       {
         "query_type": [
