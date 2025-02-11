@@ -36,7 +36,7 @@
       {
       "type": "dhcp",
       "tag": "dhcp",
-      "interface": "en0"
+      "interface": "wlan0"
       },
      {
         "tag": "fakeip",
