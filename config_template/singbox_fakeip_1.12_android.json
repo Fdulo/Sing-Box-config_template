@@ -90,7 +90,7 @@
           "AAAA"
         ],
         "rule_set": "geolocation-!cn",
-        "server": "dns_fakeip"
+        "server": "fakeip"
       },
       {
         "query_type": [
