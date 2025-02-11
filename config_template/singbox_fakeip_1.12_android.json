@@ -34,7 +34,9 @@
         "domain_resolver": "dhcp"
       },
       {
-      "type": "dhcp"
+      "type": "dhcp",
+      "tag": "dhcp",
+      "interface": ""
       },
      {
         "tag": "fakeip",
