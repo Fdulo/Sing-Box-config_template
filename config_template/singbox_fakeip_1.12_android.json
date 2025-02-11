@@ -25,13 +25,16 @@
         "tag": "dns_proxy",
         "type": "https",             
         "server": "8.8.8.8",
-        "detour": "proxy"
+        "domain_resolver": "dns_direct"
       },
       {
         "tag": "dns_direct",
         "type": "https",             
-        "server": "223.5.5.5"
-        "detour": "dns_direct"
+        "server": "223.5.5.5",
+        "domain_resolver": "dhcp"
+      },
+      {
+      "type": "dhcp"
       },
      {
         "tag": "fakeip",
