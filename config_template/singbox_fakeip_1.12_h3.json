@@ -23,7 +23,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "type": "udp",             
+        "type": "https",             
         "server": "8.8.8.8",
         "domain_resolver": "dns_direct",
         "detour": "proxy"
