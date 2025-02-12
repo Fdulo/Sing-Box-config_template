@@ -217,7 +217,7 @@
     "default_domain_resolver": "dns_direct",
     "rules": [
       {
-        "protocol": ["http", "tls"],
+        "protocol": ["http", "tls", "quic"],
         "action": "sniff"
       },
       {
@@ -236,16 +236,6 @@
       {
         "ip_is_private": true,
         "outbound": "direct-out"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {"port":853},
-          {"network":"udp","port":443},
-          {"protocol":"stun"}
-        ],
-        "action": "reject"
       },
       {
         "clash_mode": "Global",
