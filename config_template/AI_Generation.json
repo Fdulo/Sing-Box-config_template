@@ -71,15 +71,13 @@
               "A",
               "AAAA"
           ],
-          "server": "fakeip",
-          "rule_set": "geolocation-!cn"
+          "server": "fakeip"
       },
       {
           "query_type": [
               "CNAME"
           ],
-          "server": "dns_proxy",
-          "rule_set": "geolocation-!cn"
+          "server": "dns_proxy"
       },
       {
         "type": "logical",
