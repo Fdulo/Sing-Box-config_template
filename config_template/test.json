@@ -35,8 +35,17 @@
         "domain_resolver": "local",
         "detour": "direct-out"
       },
-      { "tag": "local", "type": "local", "detour": "direct-out" },
-      { "tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18" }
+      { 
+         "tag": "local", 
+         "type": "local", 
+        "detour": "direct-out"
+      },
+      { 
+         "tag": "fakeip", 
+         "type": "fakeip",
+         "inet4_range": "198.18.0.0/15", 
+         "inet6_range": "fc00::/18"
+      }
     ],
     "rules": [
       { "process_name": "sing-box", "server": "local" },
@@ -241,7 +250,7 @@
         ],
         "action": "route",
         "outbound": "direct-out"
-      }
+      },
       {
         "action": "route",
         "rule_set": [
