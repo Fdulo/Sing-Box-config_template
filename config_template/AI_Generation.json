@@ -226,12 +226,9 @@
         "mode": "or",
         "rules": [
           {"protocol": "dns"},
-          {"network": "udp","port": 53},
-          {"port":853},
-          {"network":"udp","port":443},
-          {"protocol":"stun"}
+          {"network": "udp","port": 53}
         ],
-        "outbound": "dns-out"
+        "action": "hijack-dns"
       },
       {
         "clash_mode": "Direct",
@@ -240,6 +237,16 @@
       {
         "ip_is_private": true,
         "outbound": "direct-out"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {"port":853},
+          {"network":"udp","port":443},
+          {"protocol":"stun"}
+        ],
+        "action": "reject"
       },
       {
         "clash_mode": "Global",
