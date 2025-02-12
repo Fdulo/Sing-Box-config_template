@@ -60,10 +60,32 @@
         "server": "fakeip"
       },
       {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
       {
+        "query_type": [
+          "CNAME"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geoip-cn",
+        "server": "dns_direct"
+      },
+      {
+        "query_type": [
+          "CNAME"
+        ],
         "rule_set": "geoip-cn",
         "server": "dns_direct"
       },
