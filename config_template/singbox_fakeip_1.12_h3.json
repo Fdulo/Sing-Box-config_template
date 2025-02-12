@@ -46,6 +46,7 @@
       }
     ],
     "rules": [
+      { "process_name": "sing-box", "server": "local" },
       {
         "action": "route",
         "clash_mode": "Direct",
@@ -62,7 +63,7 @@
           "AAAA"
         ],
         "rule_set": "geosite-cn",
-        "server": "dns_direct"
+        "server": "fakeip"
       },
       {
         "query_type": [
