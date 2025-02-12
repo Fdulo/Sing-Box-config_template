@@ -1,7 +1,4 @@
 {
-"certificate": {
-  "store": "system"
-  },
   "log": {
     "disabled": false,
     "level": "warn",
@@ -444,7 +441,6 @@
       }
     ],
     "auto_detect_interface": true,
-    "override_android_vpn": true,
     "final": "final"
   }
 }
