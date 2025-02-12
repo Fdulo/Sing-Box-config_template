@@ -116,6 +116,7 @@
         "172.19.0.1/30",
         "fdfe:2952:8964::1/126"
       ],
+      "mtu": 1450,
       "stack": "system",
       "auto_route": true,
       "strict_route": true
