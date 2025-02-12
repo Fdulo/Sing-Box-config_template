@@ -48,6 +48,7 @@
       }
     ],
     "rules": [
+      { "process_name": "sing-box", "server": "local" },
       {
         "action": "route",
         "clash_mode": "Direct",
