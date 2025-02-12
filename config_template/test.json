@@ -75,6 +75,21 @@
         "server": "dns_direct"
       },
       {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geolocation-!cn",
+        "server": "fakeip"
+      },
+      {
+        "query_type": [
+          "CNAME"
+        ],
+        "rule_set": "geolocation-!cn",
+        "server": "dns_proxy"
+      }
+      {
         "type": "logical",
         "mode": "and",
         "rules": [
@@ -85,19 +100,6 @@
           {
             "rule_set": "geoip-cn"
           }
-        ],
-        "server": "dns_proxy"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
-      },
-      {
-        "query_type": [
-          "CNAME"
         ],
         "server": "dns_proxy"
       }
