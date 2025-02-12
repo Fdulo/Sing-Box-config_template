@@ -73,6 +73,10 @@
         "server": "dns_direct"
       },
       {
+            "rule_set": "geoip-cn"
+            "server": "dns_direct"
+      }
+      {
         "query_type": [
           "A",
           "AAAA"
@@ -82,20 +86,6 @@
       {
         "query_type": [
           "CNAME"
-        ],
-        "server": "dns_proxy"
-      },
-            {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
         ],
         "server": "dns_proxy"
       }
@@ -116,21 +106,7 @@
       ],
       "stack": "system",
       "auto_route": true,
-      "strict_route": true,
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 7890
-        }
-      }
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
-    }
+      "strict_route": true
   ],
   "outbounds": [
     {
@@ -241,23 +217,10 @@
         "server": "dns_direct"
       },
     "rules": [
-            {
+      {
         "action": "sniff"
-            },
-            {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "protocol": "dns"
-          },
-          {
-            "network": "udp",
-            "port": 53
-          }
-        ],
-        "action": "hijack-dns"
       },
+      {"protocol":"dns","action":"hijack-dns"},
       {
         "clash_mode": "Direct",
         "action": "route",
@@ -277,6 +240,14 @@
         "action": "route",
         "outbound": "proxy"
       },
+      {
+        "rule_set": [
+          "geosite-cn", 
+          "geoip-cn"          
+        ],
+        "action": "route",
+        "outbound": "direct-out"
+      }
       {
         "action": "route",
         "rule_set": [
@@ -345,14 +316,6 @@
         "action": "route",
         "rule_set": "geolocation-!cn",
         "outbound": "proxy"
-      },
-      {
-        "rule_set": [
-          "geosite-cn", 
-          "geoip-cn"          
-        ],
-        "action": "route",
-        "outbound": "direct-out"
       }
     ],
     "rule_set": [
