@@ -75,7 +75,7 @@
       {
             "rule_set": "geoip-cn"
             "server": "dns_direct"
-      }
+      },
       {
         "query_type": [
           "A",
