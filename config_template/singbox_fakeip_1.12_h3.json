@@ -1,6 +1,6 @@
 {
 "certificate": {
-  "store": "default"
+  "store": "system"
   },
   "log": {
     "disabled": false,
