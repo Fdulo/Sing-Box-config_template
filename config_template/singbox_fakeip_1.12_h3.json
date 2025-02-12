@@ -240,7 +240,7 @@
         ],
         "action": "route",
         "outbound": "direct-out"
-      }
+      },
       {
         "action": "route",
         "rule_set": [
