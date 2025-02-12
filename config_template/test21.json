@@ -102,7 +102,7 @@
           "CNAME"
         ],
         "server": "dns_proxy"
-      },
+      }
     ],
         "final": "dns_proxy",
         "disable_cache": false,
