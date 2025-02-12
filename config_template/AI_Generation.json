@@ -217,6 +217,7 @@
     "default_domain_resolver": "dns_direct",
     "rules": [
       {
+        "protocol": ["http", "tls"],
         "action": "sniff"
       },
       {
