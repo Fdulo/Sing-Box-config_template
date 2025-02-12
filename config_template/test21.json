@@ -59,6 +59,21 @@
         "clash_mode": "Global",
         "server": "fakeip"
       },
+            {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      },
+      {
+        "query_type": [
+          "CNAME"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      },
       {
         "query_type": [
           "A",
@@ -73,20 +88,20 @@
         ],
         "server": "dns_proxy"
       },
-      {
-                "type": "logical",
-                "mode": "and",
-                "rules": [
-                    {
-                        "rule_set": "geolocation-!cn",
-                        "invert": true
-                    },
-                    {
-                        "rule_set": "geoip-cn"
-                    }
-                ],
-                "server": "dns_direct"
-            }
+            {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "dns_direct"
+     }
     ],
         "final": "dns_proxy",
         "disable_cache": false,
