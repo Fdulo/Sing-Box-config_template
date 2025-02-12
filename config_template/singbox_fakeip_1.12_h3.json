@@ -63,7 +63,7 @@
           "AAAA"
         ],
         "rule_set": "geosite-cn",
-        "server": "fakeip"
+        "server": "dns_direct"
       },
       {
         "query_type": [
