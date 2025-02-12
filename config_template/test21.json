@@ -64,73 +64,29 @@
           "A",
           "AAAA"
         ],
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "CNAME"
-        ],
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": [
-                    "domestic_non_ip",
-                    "direct_non_ip"
-                ],
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "CNAME"
-        ],
-        "rule_set": [
-                    "domestic_non_ip",
-                    "direct_non_ip"
-                ],
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "rule_set": [
-                    "domestic_ip",
-                    "china_ip",
-                    "geoip-cn"
-                ],
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "CNAME"
-        ],
-        "rule_set": [
-                    "domestic_ip",
-                    "china_ip",
-                    "geoip-cn"
-                ],
-        "server": "dns_direct"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
+        "server": "fakeip",
+        "rewrite_ttl": 1
       },
       {
         "query_type": [
           "CNAME"
         ],
         "server": "dns_proxy"
-      }
+      },
+      {
+                "type": "logical",
+                "mode": "and",
+                "rules": [
+                    {
+                        "rule_set": "geolocation-!cn",
+                        "invert": true
+                    },
+                    {
+                        "rule_set": "geoip-cn"
+                    }
+                ],
+                "server": "dns_direct"
+            }
     ],
         "final": "dns_proxy",
         "disable_cache": false,
