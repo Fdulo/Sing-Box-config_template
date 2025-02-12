@@ -107,6 +107,7 @@
       "stack": "system",
       "auto_route": true,
       "strict_route": true
+    }
   ],
   "outbounds": [
     {
