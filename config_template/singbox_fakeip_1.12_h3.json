@@ -1,4 +1,7 @@
 {
+  {
+  "store": "default"
+  },
   "log": {
     "disabled": false,
     "level": "warn",
