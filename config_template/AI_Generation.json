@@ -217,6 +217,10 @@
     "default_domain_resolver": "dns_direct",
     "rules": [
       {
+      "port":853,
+      "action": "reject"
+      },
+      {
         "protocol": ["http", "tls", "quic"],
         "action": "sniff"
       },
@@ -225,8 +229,7 @@
         "mode": "or",
         "rules": [
           {"protocol": "dns"},
-          {"network": "udp","port": 53},
-          {"network":"tcp","port":443}
+          {"network": "udp","port": 53}
         ],
         "action": "hijack-dns"
       },
