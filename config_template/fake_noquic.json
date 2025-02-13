@@ -23,7 +23,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "type": "tls",
+        "type": "https",
         "server": "8.8.8.8",
         "domain_resolver": "dns_direct",
         "detour": "proxy"
@@ -217,7 +217,7 @@
   "route": {
     "auto_detect_interface": true,
     "override_android_vpn": true,
-    "default_domain_resolver": "local",
+    "default_domain_resolver": "dns_direct",
     "rules": [
       {
       "type": "logical",
@@ -237,7 +237,6 @@
         "mode": "or",
         "rules": [
           {"protocol": "dns"},
-          {"protocol": "tls"},
           {"network": "udp","port": 53}
         ],
         "action": "hijack-dns"
