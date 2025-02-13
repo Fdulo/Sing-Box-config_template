@@ -217,7 +217,7 @@
   "route": {
     "auto_detect_interface": true,
     "override_android_vpn": true,
-    "default_domain_resolver": "dns_direct",
+    "default_domain_resolver": "local",
     "rules": [
       {
       "type": "logical",
