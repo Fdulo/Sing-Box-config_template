@@ -64,7 +64,6 @@
           "CNAME"
         ],
         "rule_set": "geosite-cn",
-        "disable_cache": true,
         "server": "dns_direct"
       },
       {
