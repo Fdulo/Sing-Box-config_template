@@ -215,6 +215,8 @@
     }
   ],
   "route": {
+    "auto_detect_interface": true,
+    "override_android_vpn": true,
     "default_domain_resolver": "dns_direct",
     "rules": [
       {
@@ -399,8 +401,6 @@
         "download_detour": "direct-out"
       }
     ],
-    "auto_detect_interface": true,
-     "override_android_vpn": true,
     "final": "final"
   }
 }
