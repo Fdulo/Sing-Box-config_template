@@ -1,4 +1,5 @@
 # Introduction
+[中文文档](https://github.com/Fdulo/Sing-Box-config_template/blob/main/README_ZH-CN.md)
 
 This is my personal **sing-box** configuration template, which can be used directly with [sing-box-subscribe](https://github.com/Toperlock/sing-box-subscribe).
 
