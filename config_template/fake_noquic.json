@@ -7,7 +7,7 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "store_fakeip": false,
+      "store_fakeip": true,
       "store_rdrc": false
     },
     "clash_api": {
@@ -71,7 +71,8 @@
               "A",
               "AAAA"
           ],
-          "server": "fakeip"
+          "server": "fakeip",
+          "rewrite_ttl": 1
       },
       {
           "query_type": [
