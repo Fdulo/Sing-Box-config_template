@@ -23,7 +23,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "type": "h3",
+        "type": "https",
         "server": "8.8.8.8",
         "domain_resolver": "dns_direct",
         "detour": "proxy"
@@ -230,8 +230,7 @@
         "mode": "or",
         "rules": [
           {"protocol": "dns"},
-          {"network": "udp","port": 53},
-          {"network":"udp","port":443}
+          {"network": "udp","port": 53}
         ],
         "action": "hijack-dns"
       },
