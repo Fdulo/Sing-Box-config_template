@@ -5,6 +5,8 @@ This is my personal **sing-box** configuration template, which can be used direc
 
 # Features
 
+> **Less is more** – This template is designed to be simple yet effective.
+
 - Designed to minimize DNS leaks
 - Supports split routing for a limited number of Chinese websites
 - Some templates enable inbound **mixed** and **HTTP** proxies
