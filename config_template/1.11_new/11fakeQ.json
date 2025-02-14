@@ -123,7 +123,8 @@
       ],
       "mtu": 1440,
       "stack": "system",
-      "auto_route": true
+      "auto_route": true,
+      "strict_route": true
     }
   ],
     "outbounds": [
