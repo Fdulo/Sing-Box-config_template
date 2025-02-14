@@ -15,7 +15,7 @@ The available **sing-box** template versions include:
 - **1.11**: supports `realip` and `fakeip`
 - **1.12**: supports `realip` and `fakeip`  
 
->**Recommendation: use version 1.11**, as version 1.12 is still in early development and may have several issues.
+>**Recommendation: use version [1.11](https://github.com/Fdulo/Sing-Box-config_template/blob/main/config_template/1.11_new/11fakeQ.json)**, as version 1.12 is still in early development and may have several issues.
 
 # Afterword
 
