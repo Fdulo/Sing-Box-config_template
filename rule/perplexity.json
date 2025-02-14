@@ -9,7 +9,6 @@
          "pplx.ai",
          "singular.net"
        ]
+         "outbound": "AI"
       },
-    ],
-          "outbound": "AI"
-          },
+    ]
