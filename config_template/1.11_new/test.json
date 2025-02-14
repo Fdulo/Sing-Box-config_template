@@ -248,13 +248,13 @@
       },
       {
         "rule_set": [
-          "geosite:cn"
+          "geosite-cn"
         ],
         "outbound": "direct_out"
       },
       {
         "rule_set": [
-          "geoip:cn"
+          "geoip-cn"
         ],
         "outbound": "direct_out"
       }
