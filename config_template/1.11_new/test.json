@@ -186,11 +186,6 @@
      },
      {
         "inbound": "tun-in",
-        "action": "resolve",
-        "strategy": "prefer_ipv4"
-      },
-     {
-        "inbound": "tun-in",
         "action": "sniff",
         "timeout": "1s"
       },
@@ -202,18 +197,6 @@
           {"network": "udp","port": 53}
         ],
         "action": "hijack-dns"
-      },
-      {
-        "clash_mode": "Direct",
-        "outbound": "direct-out"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "direct-out"
-      },
-      {
-        "clash_mode": "Global",
-        "outbound": "proxy"
       },
       {
         "rule_set": [
@@ -257,6 +240,10 @@
           "geoip-cn"
         ],
         "outbound": "direct_out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct-out"
       }
     ],
     "rule_set": [
