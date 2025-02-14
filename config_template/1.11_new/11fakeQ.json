@@ -1,6 +1,6 @@
 {
   "log": {
-    "disabled": false,
+    "disabled": true,
     "level": "warn",
     "timestamp": true
   },
@@ -141,7 +141,7 @@
       "default": "general-detour"
     },
     {
-      "tag": "openai",
+      "tag": "AI",
       "type": "selector",
       "outbounds": [
         "proxy",
@@ -170,16 +170,6 @@
         "alternative-route"
       ],
       "default": "proxy"
-    },
-    {
-       "tag":"Spotify",
-       "type":"selector",
-       "outbounds":[
-        "proxy",
-        "direct-out",
-        "alternative-route"
-       ],
-       "default": "proxy"
     },
     {
       "tag": "telegram",
@@ -267,7 +257,7 @@
         "rule_set": [
           "ai_non_ip"
         ],
-        "outbound": "openai"
+        "outbound": "AI"
       },
       {
         "rule_set": [
@@ -311,12 +301,6 @@
           "telegram_ip"
         ],
         "outbound": "telegram"
-      },
-      {
-        "rule_set": [
-          "geosite-spotify"
-        ],
-        "outbound": "Spotify"
       },
             {
         "rule_set": [
@@ -385,13 +369,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "geosite-spotify",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
         "download_detour": "direct-out"
       },
       {
