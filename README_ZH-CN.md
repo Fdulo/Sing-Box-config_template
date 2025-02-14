@@ -13,7 +13,7 @@
 - **1.11**：支持 `realip` 与 `fakeip`
 - **1.12**：支持 `realip` 与 `fakeip`  
 
->**推荐使用 1.11**，因为 1.12 正处于开发初期，可能存在较多问题。
+>**推荐使用 [1.11](https://github.com/Fdulo/Sing-Box-config_template/blob/main/config_template/1.11_new/11fakeQ.json)**，因为 1.12 正处于开发初期，可能存在较多问题。
 
 # 后话
 
