@@ -3,6 +3,7 @@
 这是我的自用 **sing-box** 配置模板，支持直接用于 [sing-box-subscribe](https://github.com/Toperlock/sing-box-subscribe)。
 
 # 特点
+> 少即是多 – 此模板旨在保持简洁且高效。
 
 - 尽量避免 DNS 泄漏
 - 分流直连少量中国站点
