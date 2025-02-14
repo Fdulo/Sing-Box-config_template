@@ -53,16 +53,6 @@
           "server": "dns_direct"
        },
       {
-        "action": "route",
-        "clash_mode": "Direct",
-        "server": "dns_direct"
-      },
-      {
-        "action": "route",
-        "clash_mode": "Global",
-        "server": "fakeip"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "dns_direct",
         "rewrite_ttl": 43200
@@ -233,13 +223,13 @@
         "rule_set": [
           "geosite-cn"
         ],
-        "outbound": "direct_out"
+        "outbound": "direct-out"
       },
       {
         "rule_set": [
           "geoip-cn"
         ],
-        "outbound": "direct_out"
+        "outbound": "direct-out"
       },
       {
         "ip_is_private": true,
