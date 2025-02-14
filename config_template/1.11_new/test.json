@@ -65,20 +65,6 @@
           "server": "fakeip",
           "rewrite_ttl": 1,
           "disable_cache": true
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
-        ],
-        "server": "dns_proxy"
       }
     ],
     "final": "dns_proxy",
