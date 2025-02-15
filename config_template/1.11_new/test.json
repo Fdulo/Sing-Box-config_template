@@ -48,10 +48,7 @@
             }
     ],
     "rules": [
-      {
-          "outbound": "any",
-          "server": "dns_direct"
-       },
+      {"outbound":"any","action":"route","server":"dns_first"},
       {
         "rule_set": "geosite-cn",
         "server": "dns_direct",
