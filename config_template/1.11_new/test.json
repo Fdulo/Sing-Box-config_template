@@ -66,7 +66,7 @@
         "rule_set": "geosite-cn",
         "invert": true,
         "server": "dns_proxy"
-      },
+      }
     ],
     "final": "dns_proxy",
     "independent_cache": true
