@@ -51,8 +51,7 @@
       {"outbound":"any","action":"route","server":"dns_first"},
       {
         "rule_set": "geosite-cn",
-        "server": "dns_direct",
-        "rewrite_ttl": 43200
+        "server": "dns_direct"
       },
       {
           "query_type": [
