@@ -60,8 +60,7 @@
               "AAAA"
           ],
           "server": "fakeip",
-          "rewrite_ttl": 1,
-          "disable_cache": true
+          "rewrite_ttl": 1
       },
       {
         "type": "logical",
