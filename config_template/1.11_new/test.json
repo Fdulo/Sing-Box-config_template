@@ -1,7 +1,8 @@
 {
   "log": {
-    "disabled": true,
-    "level": "warn",
+    "disabled": false,
+    "level": "debug",
+    "output": "/storage/emulated/0/Download/box.log",
     "timestamp": true
   },
   "experimental": {
