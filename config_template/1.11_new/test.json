@@ -165,11 +165,6 @@
     "auto_detect_interface": true,
     "final": "proxy",
     "rules": [
-     {
-        "inbound": "tun-in",
-        "action": "sniff",
-        "timeout": "1s"
-      },
       {
         "type": "logical",
         "mode": "or",
