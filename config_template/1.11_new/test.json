@@ -189,11 +189,6 @@
       "action": "reject"
       },
       {
-        "inbound": "tun-in",
-        "action": "sniff",
-        "timeout": "1s"
-      },
-      {
         "type": "logical",
         "mode": "or",
         "rules": [
