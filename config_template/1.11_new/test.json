@@ -50,13 +50,22 @@
     "rules": [
       {"outbound":"any","action":"route","server":"dns_first"},
       {
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
+          "query_type": [
+              "A",
+              "AAAA"
+          ],
+          "rule_set": "geosite-cn",
+          "invert": true,
+          "server": "fakeip"
       },
       {
         "rule_set": "geosite-cn",
         "invert": true,
         "server": "dns_proxy"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
       },
       {
           "query_type": [
@@ -78,6 +87,7 @@
         "172.19.0.1/30",
         "fdfe:2952:8964::1/126"
       ],
+      "mtu": 1440,
       "stack": "gvisor",
       "auto_route": true
     }
