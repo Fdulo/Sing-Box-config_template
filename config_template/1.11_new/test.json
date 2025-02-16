@@ -28,18 +28,21 @@
             {
                 "tag": "dns_proxy",
                 "address": "https://1.1.1.1/dns-query",
+                "strategy":"prefer_ipv4",
                 "address_resolver": "dns_first",
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
                 "address": "223.6.6.6",
+                "strategy":"prefer_ipv4",
                 "address_resolver": "dns_first",
                 "detour": "direct-out"
             },
             {
                 "tag": "dns_first",
                 "address": "223.6.6.6",
+                "strategy":"prefer_ipv4",
                 "detour": "direct-out"
             },
             {
@@ -77,6 +80,7 @@
       }
     ],
     "final": "dns_proxy",
+    "strategy":"prefer_ipv4",
     "independent_cache": true
   },
   "inbounds": [
