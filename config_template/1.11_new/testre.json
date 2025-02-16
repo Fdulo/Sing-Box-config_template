@@ -42,12 +42,12 @@
       {"outbound":"any","action":"route","server":"dns_first"},
       {
         "rule_set": "geosite-cn",
-        "server": "dns_direct"
+        "invert": true,
+        "server": "dns_proxy"
       },
       {
         "rule_set": "geosite-cn",
-        "invert": true,
-        "server": "dns_proxy"
+        "server": "dns_direct"
       }
     ],
     "final": "dns_proxy",
