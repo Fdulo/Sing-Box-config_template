@@ -58,7 +58,7 @@
         "rule_set": "geosite-cn",
         "invert": true,
         "server": "dns_proxy"
-      }
+      },
       {
           "query_type": [
               "A",
