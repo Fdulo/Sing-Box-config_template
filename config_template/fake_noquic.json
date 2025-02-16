@@ -58,11 +58,20 @@
         "server": "fakeip"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA",
-          "CNAME"
-        ],
+          "query_type": [
+              "A",
+              "AAAA"
+          ],
+          "rule_set": "geosite-cn",
+          "invert": true,
+          "server": "fakeip"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "invert": true,
+        "server": "dns_proxy"
+      },
+      {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
@@ -72,34 +81,11 @@
               "AAAA"
           ],
           "server": "fakeip",
-          "rewrite_ttl": 1
-      },
-      {
-          "query_type": [
-              "CNAME"
-          ],
-          "server": "dns_proxy"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
-        ],
-        "server": "dns_proxy"
+          "disable_cache": true
       }
     ],
     "final": "dns_proxy",
-    "disable_cache": false,
-    "disable_expire": false,
-    "independent_cache": true,
-    "reverse_mapping": false
+    "independent_cache": true
   },
   "inbounds": [
     {
@@ -227,10 +213,11 @@
         {"protocol":"stun"}
       ],
       "action": "reject"
-     },
+      },
       {
-        "protocol": ["http", "tls"],
-        "action": "sniff"
+        "inbound": "tun-in",
+        "action": "sniff",
+        "timeout": "1s"
       },
       {
         "type": "logical",
@@ -243,10 +230,6 @@
       },
       {
         "clash_mode": "Direct",
-        "outbound": "direct-out"
-      },
-      {
-        "ip_is_private": true,
         "outbound": "direct-out"
       },
       {
@@ -308,16 +291,21 @@
         ],
         "outbound": "Spotify"
       },
-            {
+      {
         "rule_set": [
-          "geosite-cn",
+          "geosite-cn"
+        ],
+        "outbound": "direct-out"
+      },
+      {
+        "rule_set": [
           "geoip-cn"
         ],
         "outbound": "direct-out"
       },
       {
-        "rule_set": "geolocation-!cn",
-        "outbound": "proxy"
+        "ip_is_private": true,
+        "outbound": "direct-out"
       }
     ],
     "rule_set": [
