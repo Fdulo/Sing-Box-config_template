@@ -70,11 +70,9 @@
           "rewrite_ttl": 1
       },
       {
-          "query_type": [
-              "CNAME"
-          ],
-          "server": "dns_proxy"
-      },
+        "query_type": ["HTTPS", "CNAME"],
+        "server": "dns_proxy"
+      }
             {
     "type": "logical",
     "mode": "or",
