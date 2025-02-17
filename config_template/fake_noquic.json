@@ -24,14 +24,14 @@
       {
         "tag": "dns_proxy",
         "type": "https",
-        "server": "8.8.8.8",
+        "server": "1.1.1.1",
         "domain_resolver": "dns_direct",
         "detour": "proxy"
       },
       {
         "tag": "dns_direct",
         "type": "https",
-        "server": "223.5.5.5",
+        "server": "223.6.6.6",
         "domain_resolver": "local",
         "detour": "direct-out"
       },
