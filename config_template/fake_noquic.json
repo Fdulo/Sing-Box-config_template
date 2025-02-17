@@ -72,7 +72,7 @@
       {
         "query_type": ["HTTPS", "CNAME"],
         "server": "dns_proxy"
-      }
+      },
             {
     "type": "logical",
     "mode": "or",
