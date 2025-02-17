@@ -58,7 +58,7 @@
         "server": "fakeip"
       },
       {
-        "rule_set": ["geosite-cn", "geoip-cn"] 
+        "rule_set": ["geosite-cn", "geoip-cn"], 
         "server": "dns_direct"
       },
       {
