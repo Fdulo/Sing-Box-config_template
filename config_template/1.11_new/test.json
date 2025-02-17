@@ -41,8 +41,7 @@
             },
             {
                 "tag": "dns_first",
-                "address": "223.6.6.6",
-                "strategy":"prefer_ipv4",
+                "address": "local",
                 "detour": "direct-out"
             },
             {
@@ -92,7 +91,7 @@
         "fdfe:2952:8964::1/126"
       ],
       "mtu": 1440,
-      "stack": "gvisor",
+      "stack": "system",
       "auto_route": true
     }
   ],
