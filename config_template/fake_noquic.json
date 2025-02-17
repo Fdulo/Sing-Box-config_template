@@ -30,7 +30,7 @@
       },
       {
         "tag": "dns_direct",
-        "type": "https",
+        "type": "udp",
         "server": "223.6.6.6",
         "domain_resolver": "local",
         "detour": "direct-out"
