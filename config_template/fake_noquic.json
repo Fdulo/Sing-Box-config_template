@@ -75,20 +75,20 @@
           ],
           "server": "dns_proxy"
       },
+            {
+    "type": "logical",
+    "mode": "or",
+    "rules": [
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
-        ],
-        "server": "dns_proxy"
+        "rule_set": "geolocation-!cn"
+      },
+      {
+        "rule_set": "geoip-cn",
+         "invert": true
       }
+    ],
+    "server": "dns_proxy"
+            }
     ],
     "final": "dns_proxy",
     "independent_cache": true
