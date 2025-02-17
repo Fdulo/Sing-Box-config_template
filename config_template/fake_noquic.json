@@ -309,17 +309,7 @@
         "outbound": "direct-out"
       },
       {
-       "type": "logical",
-       "mode": "or",
-       "rules": [
-       {
-        "rule_set": "geolocation-!cn"
-       },
-       {
-        "rule_set": "geoip-cn",
-         "invert": true
-       }
-       ],
+        "rule_set": "geolocation-!cn",
         "outbound": "proxy"
       }
     ],
