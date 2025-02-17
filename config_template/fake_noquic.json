@@ -58,20 +58,6 @@
         "server": "fakeip"
       },
       {
-          "query_type": [
-              "A",
-              "AAAA"
-          ],
-          "rule_set": "geosite-cn",
-          "invert": true,
-          "server": "fakeip"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "invert": true,
-        "server": "dns_proxy"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
@@ -81,7 +67,27 @@
               "AAAA"
           ],
           "server": "fakeip",
-          "disable_cache": true
+          "rewrite_ttl": 1
+      },
+      {
+          "query_type": [
+              "CNAME"
+          ],
+          "server": "dns_proxy"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "dns_proxy"
       }
     ],
     "final": "dns_proxy",
@@ -215,6 +221,11 @@
       "action": "reject"
       },
       {
+        "sniffer": ["http", "tls"],
+        "action": "sniff",
+        "timeout": "1s"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -227,6 +238,10 @@
         "clash_mode": "Direct",
         "outbound": "direct-out"
       },
+      {
+        "ip_is_private": true,
+        "outbound": "direct-out"
+      }, 
       {
         "clash_mode": "Global",
         "outbound": "proxy"
@@ -288,19 +303,14 @@
       },
       {
         "rule_set": [
-          "geosite-cn"
-        ],
-        "outbound": "direct-out"
-      },
-      {
-        "rule_set": [
+          "geosite-cn",
           "geoip-cn"
         ],
         "outbound": "direct-out"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct-out"
+        "rule_set": "geolocation-!cn",
+        "outbound": "proxy"
       }
     ],
     "rule_set": [
