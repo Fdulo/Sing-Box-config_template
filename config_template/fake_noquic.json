@@ -58,7 +58,7 @@
         "server": "fakeip"
       },
       {
-        "rule_set": "geosite-cn",
+        "rule_set": ["geosite-cn", "geoip-cn"] 
         "server": "dns_direct"
       },
       {
@@ -304,12 +304,22 @@
       {
         "rule_set": [
           "geosite-cn",
-          "geoip-cn"
+          "geoip-cn" 
         ],
         "outbound": "direct-out"
       },
       {
-        "rule_set": "geolocation-!cn",
+       "type": "logical",
+       "mode": "or",
+       "rules": [
+       {
+        "rule_set": "geolocation-!cn"
+       },
+       {
+        "rule_set": "geoip-cn",
+         "invert": true
+       }
+       ],
         "outbound": "proxy"
       }
     ],
