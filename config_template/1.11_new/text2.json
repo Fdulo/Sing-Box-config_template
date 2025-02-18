@@ -20,31 +20,35 @@
     }
   },
   "dns": {
-    "servers": [
-      {
-        "tag": "dns_proxy",
-        "type": "https",
-        "server": "1.1.1.1",
-        "domain_resolver": "dns_direct",
-        "detour": "proxy"
-      },
-      {
-        "tag": "dns_direct",
-        "type": "udp",
-        "server": "223.6.6.6",
-        "domain_resolver": "local",
-        "detour": "direct-out"
-      },
-      {
-        "tag": "local",
-        "type": "local"
-      },
-      {
-        "tag": "fakeip",
-        "type": "fakeip",
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"
-      }
+     "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00:8964::/32"
+        },
+        "servers": [
+            {
+                "tag": "dns_proxy",
+                "address": "https://1.1.1.1/dns-query",
+                "strategy":"prefer_ipv4",
+                "address_resolver": "dns_first",
+                "detour": "proxy"
+            },
+            {
+                "tag": "dns_direct",
+                "address": "223.6.6.6",
+                "strategy":"prefer_ipv4",
+                "address_resolver": "dns_first",
+                "detour": "direct-out"
+            },
+            {
+                "tag": "local",
+                "address": "local",
+                "detour": "direct-out"
+            },
+            {
+                "tag": "fakeip",
+                "address": "fakeip"
+            }
     ],
     "rules": [
    {"outbound":"any","action":"route","server":"dns_direct"},
