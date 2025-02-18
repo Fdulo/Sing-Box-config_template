@@ -20,11 +20,12 @@
       "dns": {
         "servers": [
            {"tag":"dns-remote","type": "https",             
-        "server": "8.8.8.8","detour":"节点选择"},
+        "server": "94.140.14.140","detour":"节点选择"},
            {"tag":"dns-local","type": "https",             
         "server": "223.5.5.5","detour":"全球直连"}
         ],
-        "rules": [
+        "rules": [
+
             {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
             {"rule_set":"geosite-dnsblock","action":"reject","method":"default","no_drop":false},
@@ -41,7 +42,8 @@
                 "client_subnet": "61.141.249.0/24"
             }
         ],
-        "final": "dns-remote",
+        "final": "dns-remote",
+
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
