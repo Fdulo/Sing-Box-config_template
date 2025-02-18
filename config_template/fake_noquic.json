@@ -68,29 +68,14 @@
           "rewrite_ttl": 1
       },
       {
-        "query_type": ["HTTPS", "CNAME"],
         "rule_set": "geosite-cn",
-          "invert": true,
+        "invert": true,
         "server": "dns_proxy"
       },
       {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
-      },
-      {
-    "type": "logical",
-    "mode": "or",
-    "rules": [
-      {
-        "rule_set": "geolocation-!cn"
-      },
-      {
-        "rule_set": "geoip-cn",
-         "invert": true
       }
-    ],
-    "server": "dns_proxy"
-            }
     ],
     "final": "dns_proxy",
     "independent_cache": true
