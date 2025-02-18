@@ -58,22 +58,26 @@
         "server": "fakeip"
       },
       {
-        "rule_set": "geosite-cn",
-        "server": "dns_direct"
-      },
-      {
           "query_type": [
               "A",
               "AAAA"
           ],
+          "rule_set": "geosite-cn",
+          "invert": true,
           "server": "fakeip",
           "rewrite_ttl": 1
       },
       {
         "query_type": ["HTTPS", "CNAME"],
+        "rule_set": "geosite-cn",
+          "invert": true,
         "server": "dns_proxy"
       },
-            {
+      {
+        "rule_set": "geosite-cn",
+        "server": "dns_direct"
+      },
+      {
     "type": "logical",
     "mode": "or",
     "rules": [
