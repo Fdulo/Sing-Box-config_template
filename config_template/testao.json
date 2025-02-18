@@ -96,8 +96,7 @@
   
   "route": {
     "auto_detect_interface": true,
-    "default_domain_resolver": {
-        "server": "dns-local",
+    "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
       {"inbound":["mixed-in","tun-in"],"action":"sniff"},
