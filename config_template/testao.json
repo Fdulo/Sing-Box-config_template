@@ -20,9 +20,9 @@
       "dns": {
         "servers": [
            {"tag":"dns-remote","type": "https",             
-        "server": "8.8.8.8","strategy":"ipv4_only","detour":"节点选择"},
+        "server": "8.8.8.8","detour":"节点选择"},
            {"tag":"dns-local","type": "https",             
-        "server": "223.5.5.5","strategy":"ipv4_only","detour":"全球直连"}
+        "server": "223.5.5.5","detour":"全球直连"}
         ],
         "rules": [
             {"clash_mode":"Direct","action":"route","server":"dns-local"},
@@ -41,10 +41,9 @@
                 "client_subnet": "61.141.249.0/24"
             }
         ],
-        "final": "dns-remote",
-        "strategy": "ipv4_only",
+        "final": "dns-remote",
         "disable_cache": false,
-        "disable_expire": true,
+        "disable_expire": false,
         "independent_cache": true,
         "reverse_mapping": false
     },
@@ -150,4 +149,6 @@
     ]
   }
 }
+
+
 
