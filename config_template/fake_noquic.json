@@ -102,10 +102,9 @@
       "tag": "proxy",
       "type": "selector",
       "outbounds": [
-        "general-detour",
+        "{all}",
         "direct-out"
-      ],
-      "default": "general-detour"
+      ]
     },
     {
       "tag": "openai",
@@ -139,43 +138,6 @@
       "default": "proxy"
     },
     {
-       "tag":"Spotify",
-       "type":"selector",
-       "outbounds":[
-        "proxy",
-        "direct-out",
-        "alternative-route"
-       ],
-       "default": "proxy"
-    },
-    {
-      "tag": "telegram",
-      "type": "selector",
-      "outbounds": [
-        "proxy",
-        "direct-out",
-        "alternative-route"
-      ],
-      "default": "proxy"
-    },
-    {
-      "tag": "microsoft",
-      "type": "selector",
-      "outbounds": [
-        "proxy",
-        "direct-out",
-        "alternative-route"
-      ],
-      "default": "proxy"
-    },
-    {
-      "tag": "general-detour",
-      "type": "selector",
-      "outbounds": [
-            "{all}"
-      ]
-    },
-    {
       "tag": "alternative-route",
       "type": "selector",
       "outbounds": [
@@ -194,7 +156,6 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "override_android_vpn": true,
     "default_domain_resolver": "dns_direct",
     "rules": [
       {
@@ -241,24 +202,6 @@
       },
       {
         "rule_set": [
-          "telegram_non_ip"
-        ],
-        "outbound": "telegram"
-      },
-      {
-        "rule_set": [
-          "microsoft_cdn_non_ip"
-        ],
-        "outbound": "direct-out"
-      },
-      {
-        "rule_set": [
-          "microsoft_non_ip"
-        ],
-        "outbound": "microsoft"
-      },
-      {
-        "rule_set": [
           "geosite-youtube"
         ],
         "outbound": "YouTube"
@@ -284,12 +227,6 @@
       },
       {
         "rule_set": [
-          "geosite-spotify"
-        ],
-        "outbound": "Spotify"
-      },
-      {
-        "rule_set": [
           "geosite-cn",
           "geoip-cn" 
         ],
@@ -306,34 +243,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/ai.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "telegram_non_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/telegram.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "telegram_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/ip/telegram.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "microsoft_cdn_non_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/microsoft_cdn.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "microsoft_non_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://github.com/kunori-kiku/sing-box-ruleset/raw/main/non_ip/microsoft.srs",
         "download_detour": "direct-out"
       },
       {
@@ -355,13 +264,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
-        "download_detour": "direct-out"
-      },
-      {
-        "tag": "geosite-spotify",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
         "download_detour": "direct-out"
       },
       {
