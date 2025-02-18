@@ -30,14 +30,13 @@
                 "tag": "dns_proxy",
                 "address": "https://1.1.1.1/dns-query",
                 "strategy":"prefer_ipv4",
-                "address_resolver": "dns_first",
+                "address_resolver": "dns_direct",
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
                 "address": "223.6.6.6",
                 "strategy":"prefer_ipv4",
-                "address_resolver": "dns_first",
                 "detour": "direct-out"
             },
             {
