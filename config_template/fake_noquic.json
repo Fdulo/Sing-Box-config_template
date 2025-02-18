@@ -169,11 +169,7 @@
       ],
       "action": "reject"
       },
-      {
-        "sniffer": ["http", "tls"],
-        "action": "sniff",
-        "timeout": "1s"
-      },
+      {"inbound":["tun-in"],"action":"sniff", "timeout": "1s"},
       {
         "type": "logical",
         "mode": "or",
