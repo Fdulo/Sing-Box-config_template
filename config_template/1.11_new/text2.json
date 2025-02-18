@@ -83,6 +83,7 @@
       }
     ],
     "final": "dns_proxy",
+    "strategy":"prefer_ipv4",
     "independent_cache": true
   },
   "inbounds": [
