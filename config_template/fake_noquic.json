@@ -222,12 +222,6 @@
       },
       {
         "rule_set": [
-          "telegram_ip"
-        ],
-        "outbound": "telegram"
-      },
-      {
-        "rule_set": [
           "geosite-cn",
           "geoip-cn" 
         ],
