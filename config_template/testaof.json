@@ -6,8 +6,8 @@
     },
     "experimental": {
         "cache_file": {
-            "enabled": true,
-            "store_rdrc": true
+            "enabled": false,
+            "store_rdrc": false
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
@@ -30,7 +30,8 @@
         "inet6_range": "fc00::/18"
       }
         ],
-        "rules": [
+        "rules": [
+
             {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
