@@ -4,11 +4,6 @@
         "level": "warn",
         "timestamp": true
     },
-    "log": {
-        "disabled": true,
-        "level": "warn",
-        "timestamp": true
-    },
     "experimental": {
         "cache_file": {
             "enabled": false,
