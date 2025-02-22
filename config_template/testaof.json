@@ -7,6 +7,15 @@
     "experimental": {
         "cache_file": {
             "enabled": false,
+            "store_r{
+    "log": {
+        "disabled": true,
+        "level": "warn",
+        "timestamp": true
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": false,
             "store_rdrc": false
         },
         "clash_api": {
@@ -111,7 +120,7 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"inbound":["mixed-in","tun-in"],"action":"sniff"},
+      {"inbound":["mixed-in","tun-in"],"action":"sniff", "timeout":"1ms"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
