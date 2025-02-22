@@ -4,10 +4,6 @@
         "level": "warn",
         "timestamp": true
     },
-    "experimental": {
-        "cache_file": {
-            "enabled": false,
-            "store_r{
     "log": {
         "disabled": true,
         "level": "warn",
