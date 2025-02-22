@@ -112,7 +112,6 @@
     "final": "漏网之鱼",
     "rules": [
       {"inbound":["mixed-in","tun-in"],"action":"sniff"},
-      {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"500ms"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
