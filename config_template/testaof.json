@@ -36,8 +36,7 @@
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
 
 {          "query_type": [
-              "A",
-              "AAAA"
+              "A"
           ],
 "rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 1},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
@@ -53,7 +52,7 @@
             }
         ],
         "final": "dns-remote",
-
+        "strategy": "ipv4_only",
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": true,
