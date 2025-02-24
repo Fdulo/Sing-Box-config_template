@@ -26,7 +26,8 @@
       {
         "tag": "fakeip",
         "type": "fakeip",
-        "inet4_range": "198.18.0.0/15"
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
       }
         ],
         "rules": [
@@ -36,7 +37,8 @@
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
 
 {          "query_type": [
-              "A"
+              "A",
+              "AAAA"
           ],
 "rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 1},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
@@ -64,7 +66,8 @@
             "type": "tun",
             "stack": "mixed",
             "address": [
-                "172.19.0.1/28"
+                "172.19.0.1/30",
+                "fdfe:2952:8964::1/126"
             ],
             "mtu": 1450,
             "auto_route": true,
