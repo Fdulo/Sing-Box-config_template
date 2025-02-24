@@ -40,7 +40,7 @@
               "A",
               "AAAA"
           ],
-"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","disable_cache": true,},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
@@ -53,10 +53,7 @@
             }
         ],
         "final": "dns-remote",
-        "disable_cache": false,
-        "disable_expire": false,
-        "independent_cache": true,
-        "reverse_mapping": false
+        "independent_cache": true
     },
     "inbounds": [
         {
