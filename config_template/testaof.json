@@ -6,8 +6,8 @@
     },
     "experimental": {
         "cache_file": {
-            "enabled": false,
-            "store_rdrc": false
+            "enabled": true,
+            "store_rdrc": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
@@ -40,7 +40,7 @@
               "A",
               "AAAA"
           ],
-"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 1},
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
@@ -49,8 +49,7 @@
                    {"rule_set":"geosite-geolocation-!cn","invert":true},{"rule_set":"geoip-cn"}
                 ],
                 "action": "route",
-                "server": "dns-remote",
-                "client_subnet": "61.141.249.0/24"
+                "server": "dns-remote"
             }
         ],
         "final": "dns-remote",
@@ -102,7 +101,7 @@
     { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择", "手动切换", "全球直连"],"default":"节点选择"  },
     { "tag": "手动切换", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "手动切换二", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.youtube.com/generate_204", "interval": "10m", "tolerance": 50 },
+    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.google.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "全球直连", "type": "direct" }
   ],
   
@@ -111,7 +110,7 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"500ms"},
+      {"action":"sniff","sniffer":["http","dns"],"timeout":"300ms"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
