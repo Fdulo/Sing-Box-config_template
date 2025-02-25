@@ -22,13 +22,25 @@
            {"tag":"dns-remote","type": "https",             
         "server": "94.140.14.140","detour":"节点选择"},
            {"tag":"dns-local","type": "https",             
-        "server": "223.5.5.5","detour":"全球直连"}
+        "server": "223.5.5.5","detour":"全球直连"},
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      }
         ],
         "rules": [
-
-            {"clash_mode":"Direct","action":"route","server":"dns-local"},
+ {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
+            {"query_type":"HTTPS","action":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
+
+{          "query_type": [
+              "A",
+              "AAAA"
+          ],
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 300},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
@@ -37,29 +49,25 @@
                    {"rule_set":"geosite-geolocation-!cn","invert":true},{"rule_set":"geoip-cn"}
                 ],
                 "action": "route",
-                "server": "dns-remote",
-                "client_subnet": "61.141.249.0/24"
+                "server": "dns-remote"
             }
         ],
         "final": "dns-remote",
-
-        "disable_cache": false,
-        "disable_expire": false,
-        "independent_cache": true,
-        "reverse_mapping": false
+        "independent_cache": true
     },
     "inbounds": [
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "system",
+            "stack": "mixed",
             "address": [
-                "172.19.0.1/28"
+                "172.19.0.1/30",
+                "fdfe:2952:8964::1/126"
             ],
             "mtu": 1450,
             "auto_route": true,
-            "endpoint_independent_nat": false,
-            "strict_route": true,
+            "endpoint_independent_nat": true,
+            "strict_route": false,
             "platform": {
         "http_proxy": {
           "enabled": true,
@@ -90,7 +98,7 @@
     { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择", "手动切换", "全球直连"],"default":"节点选择"  },
     { "tag": "手动切换", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "手动切换二", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.youtube.com/generate_204", "interval": "10m", "tolerance": 50 },
+    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.google.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "全球直连", "type": "direct" }
   ],
   
@@ -99,14 +107,14 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"inbound":["mixed-in","tun-in"],"action":"sniff"},
-      {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
+      {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"1000ms"},
+     {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}, {"port": 443, "protocol": "https"}, {"port": 853}], "action": "hijack-dns"}
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
+                "rules": [{"port":853},{"protocol":"stun"}],
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
