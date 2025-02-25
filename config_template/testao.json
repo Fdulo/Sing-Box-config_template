@@ -33,7 +33,7 @@
         "rules": [
  {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
-            {"query_type":"HTTPS","action":"dns-remote"},
+            {"query_type":"HTTPS","server":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
 
 {          "query_type": [
@@ -108,7 +108,7 @@
     "final": "漏网之鱼",
     "rules": [
       {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"1000ms"},
-     {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}, {"port": 443, "protocol": "https"}, {"port": 853}], "action": "hijack-dns"}
+     {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}, {"port": 443, "protocol": "https"}, {"port": 853}], "action": "hijack-dns"},
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {
@@ -140,7 +140,7 @@
     
     "rule_set": [
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs", "download_detour": "全球直连","update_interval": "3d" },     
-      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "全球直连","update_interval": "3d","update_interval": "3d" },
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs", "download_detour": "全球直连","update_interval": "3d" },
