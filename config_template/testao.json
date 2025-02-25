@@ -33,13 +33,15 @@
         "rules": [
  {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
+                        {"query_type":"HTTPS","server":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
 
-            {    "query_type": [
-                    "A",
-                    "AAAA"
-              ],
-            "action":"route","server":"fakeip"},
+{          "query_type": [
+              "A",
+              "AAAA"
+          ],
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
+            {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -106,8 +108,7 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"action":"sniff"},
-      { "package_name": "io.nekohasekai.sfa", "protocol": "dns", "outbound": "全球直连" },
+      {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"500ms"},
       {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}, {"port": 443, "protocol": "https"}, {"port": 853}], "action": "hijack-dns"},
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
