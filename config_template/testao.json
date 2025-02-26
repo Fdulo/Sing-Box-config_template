@@ -1,14 +1,9 @@
 {
     "log": {
-        "disabled": true,
+        "disabled": false,
         "level": "warn",
         "timestamp": true
     },
-    "experimental": {
-        "cache_file": {
-            "enabled": true,
-            "store_rdrc": true
-        },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
             "external_ui": "ui",
@@ -33,14 +28,7 @@
         "rules": [
  {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
-                        {"query_type":"HTTPS","server":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
-
-{          "query_type": [
-              "A",
-              "AAAA"
-          ],
-"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
@@ -53,22 +41,21 @@
             }
         ],
         "final": "dns-remote",
-        "strategy": "prefer_ipv4",
         "independent_cache": true
     },
     "inbounds": [
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "mixed",
+            "stack": "system",
             "address": [
                 "172.19.0.1/30",
                 "fdfe:2952:8964::1/126"
             ],
             "mtu": 1450,
             "auto_route": true,
-            "endpoint_independent_nat": true,
-            "strict_route": false,
+            "endpoint_independent_nat": false,
+            "strict_route": true,
             "platform": {
         "http_proxy": {
           "enabled": true,
@@ -102,28 +89,27 @@
     { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.google.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "全球直连", "type": "direct" }
   ],
-  
   "route": {
     "auto_detect_interface": true,
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"action":"sniff","sniffer":["http","tls","quic","dns"],"timeout":"500ms"},
-      {"type": "logical", "mode": "or", "rules": [{"protocol": "dns"}, {"port": 53}, {"port": 443, "protocol": "https"}], "action": "hijack-dns"},
+      {"inbound":["mixed-in","tun-in"],"action":"sniff"},
+      {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port":853},{"protocol":"stun"}],
+                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
       },    
-     {
+      {
         "ip_is_private": true,
-        "outbound": "全球直连" },      
-
+        "outbound": "全球直连" 
+      },      
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
       { "rule_set": "geosite-github", "action":"route","outbound": "Github" },
@@ -153,7 +139,6 @@
       { "tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "全球直连","update_interval": "3d" },
-  
       { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "全球直连","update_interval": "3d" },     
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "全球直连","update_interval": "3d" }
