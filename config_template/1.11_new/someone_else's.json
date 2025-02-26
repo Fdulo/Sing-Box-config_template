@@ -19,9 +19,15 @@
         }
     },
       "dns": {
+            "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00:8964::/32"
+        },
         "servers": [
            {"tag":"dns-remote","address":"https://8.8.8.8/dns-query","strategy":"ipv4_only","detour":"节点选择"},
-           {"tag":"dns-local","address":"https://223.5.5.5/dns-query","strategy":"ipv4_only","detour":"全球直连"}
+           {"tag":"dns-local","address":"https://223.5.5.5/dns-query","strategy":"ipv4_only","detour":"全球直连"},
+           {"tag":"fakeip","address":"fakeip"}
         ],
         "rules": [
             {"outbound":"any","action":"route","server":"dns-local"},
