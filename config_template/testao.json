@@ -38,6 +38,11 @@
             {"clash_mode": "Direct", "action": "route", "server": "dns-local"},
             {"clash_mode": "Global", "action": "route", "server": "dns-remote"},
             {"rule_set": "geosite-cn", "action": "route", "server": "dns-local"},
+            {   "query_type": [
+                   "A",
+                   "AAAA"
+                ],
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
             {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "dns-remote"},
             {
                 "type": "logical",
