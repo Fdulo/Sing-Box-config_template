@@ -18,7 +18,7 @@
             {
                 "tag": "dns-remote",
                 "type": "https",
-                "server": "94.140.14.140",
+                "server": "8.8.8.8",
                 "detour": "节点选择"
             },
             {
@@ -69,8 +69,8 @@
             ],
             "mtu": 1450,
             "auto_route": true,
-            "endpoint_independent_nat": false,
-            "strict_route": true,
+            "endpoint_independent_nat": true,
+            "strict_route": false,
             "platform": {
                 "http_proxy": {
                     "enabled": true,
