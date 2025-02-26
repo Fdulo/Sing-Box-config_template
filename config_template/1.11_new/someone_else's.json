@@ -7,19 +7,20 @@
     "experimental": {
         "cache_file": {
             "enabled": true,
+            "store_fakeip": true,
             "store_rdrc": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
             "external_ui": "ui",
-            "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+            "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
             "external_ui_download_detour": "全球直连",
             "default_mode": "rule"
         }
     },
       "dns": {
         "servers": [
-           {"tag":"dns-remote","address":"https://94.140.14.140/dns-query","strategy":"ipv4_only","detour":"节点选择"},
+           {"tag":"dns-remote","address":"https://8.8.8.8/dns-query","strategy":"ipv4_only","detour":"节点选择"},
            {"tag":"dns-local","address":"https://223.5.5.5/dns-query","strategy":"ipv4_only","detour":"全球直连"}
         ],
         "rules": [
@@ -28,6 +29,11 @@
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
             {"rule_set":"geosite-dnsblock","action":"reject","method":"default","no_drop":false},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
+            {   "query_type": [
+                   "A",
+                   "AAAA"
+                ],
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 1},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
