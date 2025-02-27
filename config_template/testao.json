@@ -37,6 +37,7 @@
         "rules": [
             {"clash_mode": "Direct", "action": "route", "server": "dns-local"},
             {"clash_mode": "Global", "action": "route", "server": "dns-remote"},
+                        {"query_type":"HTTPS", "server": "dns-local"},
             {"rule_set": "geosite-cn", "action": "route", "server": "dns-local"},
             {   "query_type": [
                    "A",
@@ -116,7 +117,7 @@
             {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port": 853}, {"network": "udp", "port": 443}, {"protocol": "stun"}],
+                "rules": [{"port": 853}, {"protocol": "stun"}],
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
