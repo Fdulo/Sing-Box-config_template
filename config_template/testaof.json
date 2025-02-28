@@ -375,40 +375,4 @@
             }
         ]
     }
-}"
-            },
-            {
-                "tag": "geoip-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-                "download_detour": "全球直连",
-                "update_interval": "3d"
-            }
-        ]
-    }
-}"
-            },
-            {
-                "tag": "geoip-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-                "download_detour": "全球直连",
-                "update_interval": "3d"
-            }
-        ]
-    }
-}"
-            },
-            {
-                "tag": "geoip-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
-                "download_detour": "全球直连",
-                "update_interval": "3d"
-            }
-        ]
-    }
 }
