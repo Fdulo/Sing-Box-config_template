@@ -77,7 +77,7 @@
             "address": ["172.20.0.1/30", "fdfe:2952:8964::1/126"],
             "mtu": 1400,
             "auto_route": true,
-            "endpoint_independent_nat": false,
+            "endpoint_independent_nat": true,
             "strict_route": true,
             "platform": {
                 "http_proxy": {
