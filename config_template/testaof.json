@@ -79,23 +79,9 @@
             "type": "tun",
             "stack": "mixed",
             "address": ["172.20.0.1/30", "fdfe:2952:8964::1/126"],
-            "mtu": 1400,
+            "mtu": 1440,
             "auto_route": true,
-            "endpoint_independent_nat": false,
-            "strict_route": true,
-            "platform": {
-                "http_proxy": {
-                    "enabled": true,
-                    "server": "127.0.0.1",
-                    "server_port": 7890
-                }
-            }
-        },
-        {
-            "tag": "mixed-in",
-            "type": "mixed",
-            "listen": "127.0.0.1",
-            "listen_port": 7890
+            "strict_route": true
         }
     ],
     "outbounds": [
