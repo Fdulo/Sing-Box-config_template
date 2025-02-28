@@ -6,7 +6,7 @@
     "experimental": {
         "cache_file": {
             "enabled": true,
-            "store_rdrc": true
+            "store_fakeip": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
@@ -58,7 +58,7 @@
                 "rule_set": "geosite-geolocation-!cn",
                 "action": "route",
                 "server": "fakeip",
-                "rewrite_ttl": 0
+                "rewrite_ttl": 300
             },
             {
                 "rule_set": "geosite-geolocation-!cn",
@@ -203,7 +203,7 @@
             {
                 "action": "sniff",
                 "sniffer": ["http", "tls", "quic", "dns"],
-                "timeout": "300ms"
+                "timeout": "500ms"
             },
             {
                 "type": "logical",
