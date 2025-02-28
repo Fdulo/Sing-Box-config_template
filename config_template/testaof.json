@@ -210,7 +210,7 @@
                 "mode": "or",
                 "rules": [
                     {"protocol": "dns"},
-                    {"port": 53}
+                    {"network": "udp", "port": 53}
                 ],
                 "action": "hijack-dns"
             },
