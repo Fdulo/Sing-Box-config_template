@@ -57,8 +57,6 @@
                 "172.19.0.1/28"
             ],
             "auto_route": true,
-            "endpoint_independent_nat": false,
-            "strict_route": true,
             "platform": {
         "http_proxy": {
           "enabled": true,
