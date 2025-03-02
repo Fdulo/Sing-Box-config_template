@@ -52,7 +52,7 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "system",
+            "stack": "gvisor",
             "address": [
                 "172.19.0.1/28"
             ],
