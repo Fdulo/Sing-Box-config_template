@@ -19,8 +19,9 @@
             "inet4_range": "198.18.0.0/15"
         },
         "servers": [
-           {"tag":"dns-remote","address":"https://8.8.8.8/dns-query","strategy":"ipv4_only","detour":"节点选择"},
-           {"tag":"dns-local","address":"https://doh.pub/dns-query","strategy":"ipv4_only","detour":"全球直连"},
+           {"tag":"dns-remote","address":"https://dns.google/dns-query","address_resolver": "dns_local","strategy":"ipv4_only","detour":"节点选择"},
+           {"tag":"dns-local","address":"https://doh.pub/dns-query","address_resolver": "local","strategy":"ipv4_only","detour":"全球直连"},
+           {"tag": "local","address": "local","strategy":"ipv4_only","detour":"全球直连"},
            {"tag":"fakeip","address":"fakeip"}
         ],
         "rules": [
