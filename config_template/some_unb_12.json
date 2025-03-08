@@ -105,7 +105,7 @@
       {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
+                "rules": [{"port":853},{"protocol":"stun"}],
                 "action": "reject",
                 "method": "default",
                 "no_drop": false
