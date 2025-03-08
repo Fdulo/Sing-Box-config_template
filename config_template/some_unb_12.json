@@ -25,13 +25,6 @@
             {
                 "tag": "dns-local",
                 "type": "h3",
-                "server": "dns.alidns",
-                "domain_resolver": "google",
-                "detour": "全球直连"
-            },
-            {
-                "type": "udp",
-                "tag": "google",
                 "server": "223.5.5.5",
                 "detour": "全球直连"
             },
