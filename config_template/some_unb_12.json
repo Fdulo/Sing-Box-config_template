@@ -18,13 +18,21 @@
             {
                 "tag": "dns-remote",
                 "type": "h3",
-                "server": "8.8.8.8",
+                "server": "dns.google",
+                "domain_resolver": "dns-local",
                 "detour": "节点选择"
             },
             {
                 "tag": "dns-local",
                 "type": "h3",
-                "server": "223.5.5.5",
+                "server": "dns.alidns",
+                "domain_resolver": "google",
+                "detour": "全球直连"
+            },
+            {
+                "type": "udp",
+                "tag": "google",
+                "server": "223.5.5.5"
                 "detour": "全球直连"
             },
             {
