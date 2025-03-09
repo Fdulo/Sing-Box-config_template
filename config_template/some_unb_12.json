@@ -41,7 +41,7 @@
             {   "query_type": [
                    "A"
                 ],
-"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 0},
+"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip","rewrite_ttl": 1},
             {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
             {
                 "type": "logical",
