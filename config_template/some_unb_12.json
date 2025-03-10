@@ -18,8 +18,7 @@
             {
                 "tag": "dns-remote",
                 "type": "h3",
-                "server": "dns.google",
-                "domain_resolver": "dns-local",
+                "server": "8.8.8.8",
                 "detour": "节点选择"
             },
             {
