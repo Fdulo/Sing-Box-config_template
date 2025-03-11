@@ -122,7 +122,7 @@
     
     "rule_set": [
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs", "download_detour": "全球直连","update_interval": "3d" },     
-      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "全球直连","update_interval": "3d","update_interval": "3d" },
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs", "download_detour": "全球直连","update_interval": "3d" },
       { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "全球直连","update_interval": "3d" },
