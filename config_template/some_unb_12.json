@@ -62,12 +62,23 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "gvisor",
+            "stack": "system",
+            "mtu": 1440,
             "address": [
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
-            "auto_route": true
+            "auto_route": true,
+            "strict_route": true,
+            "platform": {
+        "http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 18193}
+      }
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 18193
     }
     ],
   "outbounds": [   
@@ -88,7 +99,7 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"inbound":["mixed-in","tun-in"],"action":"sniff"},
+      {"inbound":["tun-in", "mixed-in"],"action":"sniff"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
@@ -96,11 +107,9 @@
                 "type": "logical",
                 "mode": "or",
                 "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
-                "action": "reject",
-                "method": "default",
-                "no_drop": false
+                "action": "reject"
       },    
-     {"ip_is_private": true, "outbound": "全球直连"}, 
+      {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
       { "rule_set": "geosite-youtube", "action":"route","outbound": "YouTube" },
