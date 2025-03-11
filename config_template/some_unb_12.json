@@ -42,8 +42,7 @@
                    "A",
                    "AAAA"
                 ],
-"rule_set":"geosite-geolocation-!cn","action":"route","server":"fakeip"},
-            {"rule_set":"geosite-geolocation-!cn","action":"route","server":"dns-remote"},
+"action":"route","server":"fakeip"},
             {
                 "type": "logical",
                 "mode": "and",
