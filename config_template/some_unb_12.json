@@ -117,7 +117,7 @@
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "action":"route","outbound": "Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "action":"route","outbound": "节点选择" },
       { "rule_set": ["geoip-cn", "geosite-cn"], "action":"route","outbound": "全球直连" },
-      { "action": "resolve", "strategy": "prefer_ipv4" }
+      { "action": "resolve" }
     ],
     
     "rule_set": [
