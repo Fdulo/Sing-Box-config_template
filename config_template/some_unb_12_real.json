@@ -40,7 +40,7 @@
                 ],
                 "action": "route",
                 "server": "dns-remote",
-                "client_subnet": "61.141.249.0/24"
+                "client_subnet": "61.141.249.0"
             }
         ],
         "final": "dns-remote",
