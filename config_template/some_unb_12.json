@@ -42,7 +42,7 @@
                    "A",
                    "AAAA"
                 ],
-"action":"route","server":"fakeip"},
+              "action":"route","server":"fakeip"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -61,7 +61,7 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "system",
+            "stack": "gvisor",
             "mtu": 1440,
             "address": [
                 "172.19.0.1/28",
@@ -116,7 +116,8 @@
  
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "action":"route","outbound": "Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "action":"route","outbound": "节点选择" },
-      { "rule_set": ["geoip-cn", "geosite-cn"], "action":"route","outbound": "全球直连" }
+      { "rule_set": ["geoip-cn", "geosite-cn"], "action":"route","outbound": "全球直连" },
+      { "action": "resolve", "strategy": "prefer_ipv4" }
     ],
     
     "rule_set": [
