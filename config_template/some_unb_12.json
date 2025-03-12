@@ -61,8 +61,8 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "gvisor",
-            "mtu": 1440,
+            "stack": "system",
+            "mtu": 1450,
             "address": [
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
