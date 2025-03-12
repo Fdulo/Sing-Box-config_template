@@ -38,11 +38,6 @@
             {"clash_mode":"Direct","action":"route","server":"dns-local", "strategy": "ipv4_only"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
             {"rule_set":"geosite-cn","action":"route","server":"dns-local", "strategy": "ipv4_only"},
-            {   "query_type": [
-                   "A",
-                   "AAAA"
-                ],
-              "action":"route","server":"fakeip"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -52,7 +47,8 @@
                 "action": "route",
                 "server": "dns-remote",
                 "client_subnet": "61.141.249.0"
-            }
+            },
+            { "query_type": ["A", "AAAA"],"action":"route","server":"fakeip"}
         ],
         "final": "dns-remote",
         "independent_cache": true
