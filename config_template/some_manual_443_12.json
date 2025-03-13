@@ -100,7 +100,7 @@
       {
                 "type": "logical",
                 "mode": "and",
-                "rule_set": "geosite-youtube", "rules": [{"network":"udp","port":443}],
+                "rules": [{"rule_set": "geosite-youtube"}, {"network":"udp","port":443}],
                 "action": "reject"
       },
       { "rule_set": "geosite-youtube", "action":"route","outbound": "YouTube" },
