@@ -57,7 +57,7 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "system",
+            "stack": "mixed",
             "mtu": 1450,
             "address": [
                 "172.19.0.1/28",
@@ -93,7 +93,8 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"inbound":["tun-in", "mixed-in"],"action":"sniff"},
+      {"inbound":["tun-in"],"action":"sniff"},
+      {"inbound":["mixed-in"],"action":"resolve"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
@@ -108,7 +109,6 @@
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
       { "rule_set": "geosite-youtube", "action":"route","outbound": "YouTube" },
       { "rule_set": ["geoip-google", "geosite-google"], "action":"route","outbound": "Google" },
- 
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "action":"route","outbound": "Telegram" },
       { "rule_set": "geosite-geolocation-!cn", "action":"route","outbound": "节点选择" },
       { "rule_set": ["geoip-cn", "geosite-cn"], "action":"route","outbound": "全球直连" },
