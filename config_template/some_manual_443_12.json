@@ -57,7 +57,7 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "system",
+            "stack": "mixed",
             "mtu": 1450,
             "address": [
                 "172.19.0.1/28",
