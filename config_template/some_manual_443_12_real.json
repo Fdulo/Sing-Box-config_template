@@ -77,7 +77,7 @@
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
-      {"inbound":["tun-in"],"action":"sniff"},
+      {"inbound":"tun-in","action":"sniff"},
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
