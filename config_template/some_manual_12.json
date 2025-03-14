@@ -67,6 +67,7 @@
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
+            "endpoint_independent_nat": true,
             "auto_route": true,
             "strict_route": true,
             "platform": {
@@ -106,10 +107,7 @@
        "mode": "or",
        "rules": [
                    {"port": 853},
-                   {"protocol": "stun"},
-                   {"network":"udp","port":443},
-                   {"ip_cidr": ["224.0.0.0/3", "ff00::/8"]},
-                   {"source_ip_cidr": ["224.0.0.0/3", "ff00::/8"]}
+                  {"network":"udp","port":443}
                 ],
                   "action": "reject"
       },  

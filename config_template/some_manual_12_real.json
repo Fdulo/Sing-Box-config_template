@@ -5,6 +5,9 @@
         "timestamp": true
     },
     "experimental": {
+        "cache_file": {
+            "enabled": true
+        },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
             "external_ui": "ui",
@@ -56,6 +59,7 @@
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
+            "endpoint_independent_nat": true,
             "auto_route": true,
             "strict_route": true
     }
@@ -84,7 +88,7 @@
       {
                 "type": "logical",
                 "mode": "or",
-                "rules": [{"port":853},{"network":"udp","port":443},{"protocol":"stun"}],
+                "rules": [{"port":853},{"network":"udp","port":443}],
                 "action": "reject"
       },    
       {"ip_is_private": true, "outbound": "全球直连"}, 
@@ -111,6 +115,8 @@
     ]
   }
 }
+
+
 
 
 
