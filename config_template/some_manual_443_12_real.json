@@ -5,6 +5,9 @@
         "timestamp": true
     },
     "experimental": {
+       "cache_file": {
+            "enabled": true
+        },
         "clash_api": {
             "external_controller": "127.0.0.1:9095",
             "external_ui": "ui",
@@ -56,6 +59,7 @@
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
+            "endpoint_independent_nat": true,
             "auto_route": true,
             "strict_route": true
     }
@@ -81,12 +85,7 @@
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
-      {
-                "type": "logical",
-                "mode": "or",
-                "rules": [{"port":853},{"protocol":"stun"}],
-                "action": "reject"
-      },    
+      {"port":853, "action": "reject"},    
       {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
