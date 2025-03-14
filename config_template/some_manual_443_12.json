@@ -67,6 +67,7 @@
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
+            "endpoint_independent_nat": true,
             "auto_route": true,
             "strict_route": true
     }
@@ -92,17 +93,7 @@
       {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
-      {
-       "type": "logical",
-       "mode": "or",
-       "rules": [
-                   {"port": 853},
-                   {"protocol": "stun"},
-                   {"ip_cidr": ["224.0.0.0/3", "ff00::/8"]},
-                   {"source_ip_cidr": ["224.0.0.0/3", "ff00::/8"]}
-                ],
-                  "action": "reject"
-      },
+ {"port": 853, "action": "reject"},
       {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
