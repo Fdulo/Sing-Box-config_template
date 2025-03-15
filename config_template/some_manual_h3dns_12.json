@@ -119,36 +119,15 @@
       {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {
-    "type": "logical",
-    "mode": "and",
-    "rules": [
-        {"network": "udp", "port": 443},
-        {"protocol": "dns"},
-        {"rule_set": "geosite-cn"}
-    ],
-    "action": "route",
-    "outbound": "全球直连"
-},
-{
-    "type": "logical",
-    "mode": "and",
-    "rules": [
-        {"network": "udp", "port": 443},
-        {"protocol": "dns"},
-        {"rule_set": "geosite-cn","invert":true}
-    ],
-    "action": "route",
-    "outbound": "节点选择"
-},
-      {
-       "type": "logical",
-       "mode": "or",
-       "rules": [
-                   {"port": 853},
-                  {"network":"udp","port":443}
-                ],
-                  "action": "reject"
-      },  
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+            {"network": "udp", "port": 443},
+            {"protocol": "dns", "invert": true}
+        ],
+        "action": "reject"
+      },
+   {"port": 853, "action": "reject"},  
       {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
