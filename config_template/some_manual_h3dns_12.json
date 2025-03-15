@@ -121,14 +121,13 @@
       {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {
         "type": "logical",
-        "mode": "and",
+        "mode": "or",
         "rules": [
             {"network": "udp", "port": 443},
-            {"protocol": "dns", "invert": true}
+            {"port": 853},
         ],
         "action": "reject"
       },
-   {"port": 853, "action": "reject"},  
       {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
