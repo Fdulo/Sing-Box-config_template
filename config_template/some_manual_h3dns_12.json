@@ -116,10 +116,7 @@
     "final": "漏网之鱼",
     "rules": [
       {"inbound":["tun-in", "mixed-in"],"action":"sniff"},
-      {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
-      {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
-      {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
-      {
+{
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -128,6 +125,9 @@
         ],
         "action": "reject"
       },
+      {"type":"logical","mode":"or","rules":[{"protocol":"dns"},{"port":53}],"action":"hijack-dns"}, 
+      {"clash_mode":"Direct","action":"route","outbound":"全球直连"},
+      {"clash_mode":"Global","action":"route","outbound":"节点选择"},    
       {"ip_is_private": true, "outbound": "全球直连"}, 
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "action":"route","outbound": "全球直连" },   
       { "rule_set": "geosite-chat", "action":"route","outbound": "OpenAI" },
@@ -152,6 +152,7 @@
     ]
   }
 }
+
 
 
 
