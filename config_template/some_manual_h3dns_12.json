@@ -32,19 +32,10 @@
                  "server_name": "dns.google"
                  },
                "detour": "节点选择"
-              },
-              {
+           },
+           {
                   "tag": "dns-local",
-                  "type": "h3",
-                  "server": "223.5.5.5", 
-                  "headers": {
-                     "Host": "dns.alidns.com"
-                   },
-                 "tls": {
-                   "enabled": true,
-                   "disable_sni": false,
-                 "server_name": "dns.alidns.com"
-                   },
+                  "type": "local",
                  "detour": "全球直连"
             },
             {
