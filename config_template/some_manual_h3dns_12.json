@@ -20,16 +20,32 @@
         "dns": {
         "servers": [
             {
-                "tag": "dns-remote",
-                "type": "h3",
-                "server": "8.8.8.8",
-                "detour": "节点选择"
-            },
-            {
-                "tag": "dns-local",
-                "type": "h3",
-                "server": "223.5.5.5",
-                "detour": "全球直连"
+               "tag": "dns-remote",
+               "type": "h3",
+               "server": "8.8.8.8", 
+               "headers": {
+                 "Host": "dns.google"
+                  },
+              "tls": {
+                 "enabled": true,
+                 "disable_sni": false,
+                 "server_name": "dns.google"
+                 },
+               "detour": "节点选择"
+              },
+              {
+                  "tag": "dns-local",
+                  "type": "h3",
+                  "server": "223.5.5.5", 
+                  "headers": {
+                     "Host": "dns.alidns.com"
+                   },
+                 "tls": {
+                   "enabled": true,
+                   "disable_sni": false,
+                 "server_name": "dns.alidns.com"
+                   },
+                 "detour": "全球直连"
             },
             {
                 "tag": "fakeip",
@@ -156,6 +172,32 @@
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "全球直连","update_interval": "3d" }
     ]
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+ }
 }
 
 
