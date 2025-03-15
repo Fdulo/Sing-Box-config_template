@@ -124,7 +124,7 @@
         "mode": "or",
         "rules": [
             {"network": "udp", "port": 443},
-            {"port": 853},
+            {"port": 853}
         ],
         "action": "reject"
       },
