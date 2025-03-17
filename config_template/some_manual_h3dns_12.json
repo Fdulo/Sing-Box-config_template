@@ -21,7 +21,7 @@
         "servers": [
             {
                "tag": "dns-remote",
-               "type": "https",
+               "type": "h3",
                "server": "8.8.8.8", 
                "headers": {
                  "Host": "dns.google"
