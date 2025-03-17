@@ -20,7 +20,8 @@
         "dns": {
             "fakeip": {
             "enabled": true,
-            "inet4_range": "198.18.0.0/15"
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
         },
         "servers": [
             {
@@ -31,15 +32,16 @@
            {
                   "tag": "dns-local",
                   "address": "local",
-                 "detour": "全球直连"
+                  "strategy": "ipv4_only",
+                  "detour": "全球直连"
             },
             {"tag":"fakeip","address":"fakeip"}
         ],
         "rules": [ 
 {"outbound":"any","action":"route","server":"dns-local"},           
- {"clash_mode":"Direct","action":"route","server":"dns-local", "strategy": "ipv4_only"},
+ {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
-            {"rule_set":"geosite-cn","action":"route","server":"dns-local", "strategy": "ipv4_only"},
+            {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -132,6 +134,7 @@
     ]
   }
 }
+
 
 
 
