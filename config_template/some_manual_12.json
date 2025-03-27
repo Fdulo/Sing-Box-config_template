@@ -27,7 +27,7 @@
             },
             {
                 "tag": "dns-local",
-                "type": "https",
+                "type": "udp",
                 "server": "223.5.5.5",
                 "detour": "全球直连"
             },
