@@ -26,10 +26,9 @@
                 "detour": "节点选择"
             },
             {
-                "tag": "dns-local",
-                "type": "udp",
-                "server": "223.5.5.5",
-                "detour": "全球直连"
+                  "tag": "dns-local",
+                  "type": "local",
+                 "detour": "全球直连"
             },
             {
                 "tag": "fakeip",
