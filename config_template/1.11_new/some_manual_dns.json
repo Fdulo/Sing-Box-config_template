@@ -37,7 +37,7 @@
                   "strategy": "ipv4_only",
                   "detour": "全球直连"
             },
-            {
+             {
                   "address": "local",
                   "detour": "全球直连",
                   "tag": "local"
@@ -69,7 +69,7 @@
             "tag": "tun-in",
             "type": "tun",
             "stack": "mixed",
-            "mtu": 1450,
+            "mtu": 1500,
             "address": [
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
