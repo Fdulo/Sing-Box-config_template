@@ -191,12 +191,6 @@
        {
         "action": "resolve"
       },
-        {
-        "network": "udp",
-        "port": 443,
-        "action": "reject",
-        "method": "default"
-      },
       {
         "rule_set": "geosite-chat",
         "outbound": "OpenAI"
