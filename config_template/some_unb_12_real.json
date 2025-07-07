@@ -24,14 +24,13 @@
             {
                 "tag": "dns-local",
                 "type": "https",
-                "server": "223.5.5.5",
-                "detour": "全球直连"
+                "server": "223.5.5.5"
             }
         ],
         "rules": [
-            {"clash_mode":"Direct","action":"route","server":"dns-local", "strategy": "ipv4_only"},
+            {"clash_mode":"Direct","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
-            {"rule_set":"geosite-cn","action":"route","server":"dns-local", "strategy": "ipv4_only"},
+            {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -39,8 +38,7 @@
                    {"rule_set":"geosite-geolocation-!cn","invert":true},{"rule_set":"geoip-cn"}
                 ],
                 "action": "route",
-                "server": "dns-remote",
-                "client_subnet": "61.141.249.0"
+                "server": "dns-remote"
             }
         ],
         "final": "dns-remote",
@@ -61,15 +59,14 @@
     }
     ],
   "outbounds": [   
-    { "tag": "节点选择", "type": "selector", "outbounds": ["自动选择", "手动切换", "全球直连"] },
-    { "tag": "YouTube", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
-    { "tag": "OpenAI", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
-    { "tag": "Google", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择" },
-    { "tag": "Telegram", "type": "selector", "outbounds": ["节点选择", "自动选择", "手动切换", "手动切换二"],"default":"节点选择"},
+    { "tag": "节点选择", "type": "selector", "outbounds": [ "手动切换", "全球直连"] },
+    { "tag": "YouTube", "type": "selector", "outbounds": ["节点选择",  "手动切换", "手动切换二"],"default":"节点选择" },
+    { "tag": "OpenAI", "type": "selector", "outbounds": ["节点选择", "手动切换", "手动切换二"],"default":"节点选择" },
+    { "tag": "Google", "type": "selector", "outbounds": ["节点选择", "手动切换", "手动切换二"],"default":"节点选择" },
+    { "tag": "Telegram", "type": "selector", "outbounds": ["节点选择", "手动切换", "手动切换二"],"default":"节点选择"},
     { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择", "手动切换", "全球直连"],"default":"节点选择"  },
     { "tag": "手动切换", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "手动切换二", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "https://www.youtube.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "全球直连", "type": "direct" }
   ],
   
@@ -111,33 +108,3 @@
     ]
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
