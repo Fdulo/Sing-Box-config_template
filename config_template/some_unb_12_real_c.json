@@ -42,6 +42,7 @@
           { "rule_set": "geoip-cn" }
         ],
         "action": "route",
+        "rewrite_ttl": 1200,
         "server": "dns-remote"
       }
     ],
@@ -55,7 +56,6 @@
       "stack": "gvisor",
       "mtu": 1400,
       "address": ["172.19.0.1/28"],
-      "endpoint_independent_nat": false,
       "auto_route": true,
       "strict_route": true
     }
@@ -73,14 +73,13 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "rewrite_ttl": 1200,
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
       {
         "inbound": "tun-in",
         "action": "sniff",
-        "sniff_protocol": ["tls", "http"]
+        "sniffer": ["tls", "http"]
       },
       {
         "type": "logical",
@@ -182,4 +181,4 @@
       }
     ]
   }
-}
+      }
