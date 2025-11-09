@@ -46,8 +46,7 @@
       }
     ],
     "final": "dns-remote",
-    "independent_cache": true,
-    "cache_ttl": 3600
+    "independent_cache": true
   },
   "inbounds": [
     {
@@ -74,6 +73,7 @@
   ],
   "route": {
     "auto_detect_interface": true,
+    "rewrite_ttl": 1200,
     "default_domain_resolver": "dns-local",
     "final": "漏网之鱼",
     "rules": [
