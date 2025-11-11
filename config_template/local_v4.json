@@ -33,7 +33,7 @@
       }
         ],
         "rules": [
-            {"clash_mode":"Direct","action":"route","server":"dns-local"},
+            {"clash_mode":"Direct","strategy": "ipv4_only","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
             {"rule_set":"geosite-cn","strategy": "ipv4_only","action":"route","server":"dns-local"},
             {
