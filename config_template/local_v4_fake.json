@@ -60,24 +60,15 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "stack": "mixed",
+            "stack": "gVisor",
             "mtu": 1400,
             "address": [
                 "172.19.0.1/28",
                 "fdfe:2952:8964::1/126"
             ],
             "auto_route": true,
-            "strict_route": true,
-            "platform": {
-        "http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 18193}
-      }
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 18193
-    }
+            "strict_route": true
+        }
     ],
   "outbounds": [   
     { "tag": "节点选择", "type": "selector", "outbounds": [ "手动切换", "全球直连"] },
