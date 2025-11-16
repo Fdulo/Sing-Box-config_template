@@ -30,12 +30,19 @@
         "tag": "dns-local",
         "server": "223.5.5.5",
         "path": "/dns-query"
+      },
+      {
+                "tag": "fakeip",
+                "type": "fakeip",
+                "inet4_range": "198.18.0.0/15",
+                "inet6_range": "fc00::/18"
       }
         ],
         "rules": [
-            {"clash_mode":"Direct","action":"route","server":"dns-local"},
+            {"clash_mode":"Direct","strategy": "ipv4_only","action":"route","server":"dns-local"},
             {"clash_mode":"Global","action":"route","server":"dns-remote"},
-            {"rule_set":"geosite-cn","action":"route","server":"dns-local"},
+            {"rule_set":"geosite-cn","strategy": "ipv4_only","action":"route","server":"dns-local"},
+            { "disable_cache": true, "query_type": ["A", "AAAA"],"action":"route","server":"fakeip"},
             {
                 "type": "logical",
                 "mode": "and",
@@ -56,11 +63,20 @@
             "stack": "mixed",
             "mtu": 1400,
             "address": [
-                "172.19.0.1/28"
+                "172.19.0.1/28",
+                "fdfe:2952:8964::1/126"
             ],
-            "endpoint_independent_nat": true,
             "auto_route": true,
             "strict_route": true
+            "platform": {
+        "http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 18193}
+      }
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 18193
     }
     ],
   "outbounds": [   
@@ -111,4 +127,4 @@
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://raw.github.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "全球直连","update_interval": "3d" }
     ]
   }
-      }
+        }
