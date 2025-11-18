@@ -15,12 +15,16 @@
     },
         "dns": {
         "servers": [
-            {  
-        "type": "udp",  
-        "tag": "dns-remote",  
-        "server": "8.8.8.8",  
-        "detour": "节点选择"  
-      },  
+            {
+        "type": "https",
+        "tag": "dns-remote",
+        "detour": "节点选择",
+        "server": "dns.google",
+        "tls": {
+          "server_name": "dns.google"
+        },
+        "path": "/dns-query"
+      },
       {
         "type": "https",
         "tag": "dns-local",
