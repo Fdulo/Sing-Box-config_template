@@ -166,12 +166,7 @@
     "rules": [
       {
         "inbound": "tun-in",
-        "action": "sniff",
-        "sniffer": [
-          "tls",
-          "http",
-          "quic"
-        ]
+        "action": "sniff"
       },
       {
         "protocol": "dns",
