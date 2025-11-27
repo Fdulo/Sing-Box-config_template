@@ -68,6 +68,7 @@
     ],
     "final": "dns-remote",
     "reverse_mapping": true,
+    "cache_capacity": 4096,
     "independent_cache": true
   },
   "inbounds": [
